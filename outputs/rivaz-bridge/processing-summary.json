@@ -1,0 +1,77 @@
+{
+  "task": "5dcfa7d7-7bb7-475e-81b3-20d7047548e0",
+  "project": 3,
+  "images": 36,
+  "statistics": {
+    "pointcloud": {
+      "points": 729054
+    },
+    "gsd": 8.234172933776485,
+    "area": 17079.813755414427,
+    "start_date": "19/07/2019 at 10:12:55",
+    "end_date": "19/07/2019 at 10:26:05",
+    "spatial_refs": [
+      "gps"
+    ]
+  },
+  "map": {
+    "tiles": [
+      {
+        "url": "/api/projects/3/tasks/5dcfa7d7-7bb7-475e-81b3-20d7047548e0/orthophoto/",
+        "type": "orthophoto"
+      },
+      {
+        "url": "/api/projects/3/tasks/5dcfa7d7-7bb7-475e-81b3-20d7047548e0/orthophoto/",
+        "type": "plant"
+      }
+    ],
+    "meta": {
+      "task": {
+        "id": "5dcfa7d7-7bb7-475e-81b3-20d7047548e0",
+        "name": "Bridge close-up - Rivaz road and railway",
+        "project": 3,
+        "public": false,
+        "public_edit": false,
+        "camera_shots": "/api/projects/3/tasks/5dcfa7d7-7bb7-475e-81b3-20d7047548e0/download/shots.geojson",
+        "ground_control_points": "",
+        "epsg": 32632,
+        "wkt": null,
+        "srs": {
+          "name": "WGS 84 / UTM zone 32N",
+          "units": "m"
+        },
+        "orthophoto_bands": [
+          {
+            "name": "red",
+            "description": "red"
+          },
+          {
+            "name": "green",
+            "description": "green"
+          },
+          {
+            "name": "blue",
+            "description": "blue"
+          },
+          {
+            "name": "alpha",
+            "description": null
+          }
+        ],
+        "crop": false,
+        "extent": [
+          6.776183255726788,
+          46.473904960536885,
+          6.779700804160224,
+          46.47621665316287
+        ],
+        "media": "",
+        "overlays": [],
+        "tiles": [
+          "orthophoto",
+          "plant"
+        ]
+      }
+    }
+  }
+}

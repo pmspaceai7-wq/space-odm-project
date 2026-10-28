@@ -1,0 +1,81 @@
+/code/SuperBuild/install/bin/odm_orthophoto_log.txt
+
+Arguments given
+-inputFiles
+/datasets/brighton-beach/odm_texturing_25d/odm_textured_model_geo.obj
+-logFile
+/datasets/brighton-beach/odm_orthophoto/odm_orthophoto_log.txt
+-outputFile
+/datasets/brighton-beach/odm_orthophoto/odm_orthophoto.tif
+-resolution
+10.0
+-verbose
+-outputCornerFile
+/datasets/brighton-beach/odm_orthophoto/odm_orthophoto_corners.txt
+-inpaintThreshold
+1.0
+-utm_north_offset
+5188170.0
+-utm_east_offset
+576705.0
+-a_srs
++proj=utm +zone=15 +datum=WGS84 +units=m +no_defs +type=crs
+-co
+TILED=YES
+-co
+COMPRESS=DEFLATE
+-co
+PREDICTOR=2
+-co
+BIGTIFF=IF_SAFER
+-co
+BLOCKXSIZE=512
+-co
+BLOCKYSIZE=512
+-co
+NUM_THREADS=4
+--config
+GDAL_CACHEMAX
+3299497984.0
+
+Log file path was set to: /datasets/brighton-beach/odm_orthophoto/odm_orthophoto_log.txt
+Writing output to: /datasets/brighton-beach/odm_orthophoto/odm_orthophoto.tif
+Resolution count was set to: 10pixels/meter
+Inpaint threshold was set to: 1
+
+Reading mesh file... /datasets/brighton-beach/odm_texturing_25d/odm_textured_model_geo.obj
+Found material0000
+Loading odm_textured_model_geo_material0000_map_Kd.png
+Mesh file read.
+
+Boundary points:
+Point 1: -60.9575 -64.8529
+Point 2: -60.9575 66.1871
+Point 3: 72.6925 66.1871
+Point 4: 72.6925 -64.8529
+
+Model bounds x : -60.9575 -> 72.6925
+Model bounds y : -64.8529 -> 66.1871
+Model area : 17513.5m2
+Model resolution, width x height : 1337x1311
+Translating and scaling mesh...
+Rendering the ortho photo...
+Texture channels: 3
+Texture depth: 8bit
+Rendering material0000 ... done
+... model rendered
+
+Edge inpainting
+Block [(0, 1337), (0, 1311)]
+
+Writing ortho photo to /datasets/brighton-beach/odm_orthophoto/odm_orthophoto.tif
+Set GDAL_CACHEMAX to 3299497984
+Set TILED=YES
+Set COMPRESS=DEFLATE
+Set PREDICTOR=2
+Set BIGTIFF=IF_SAFER
+Set BLOCKXSIZE=512
+Set BLOCKYSIZE=512
+Set NUM_THREADS=4
+Writing corner coordinates to /datasets/brighton-beach/odm_orthophoto/odm_orthophoto_corners.txt
+Orthophoto generation done.

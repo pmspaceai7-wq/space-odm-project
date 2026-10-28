@@ -1,0 +1,8 @@
+{
+  "name": "pmspace-bridge-workspace",
+  "private": true,
+  "scripts": { "start": "node server.cjs" },
+  "dependencies": {
+    "three": "^0.180.0"
+  }
+}

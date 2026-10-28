@@ -1,0 +1,27 @@
+{
+    "make": "DJI",
+    "model": "FC300S",
+    "width": 4000,
+    "height": 2250,
+    "projection_type": "brown",
+    "focal_ratio": 0.5555555555555556,
+    "orientation": 1,
+    "capture_time": 1466699643.0,
+    "gps": {
+        "latitude": 46.842716555555555,
+        "longitude": -91.99345530555556,
+        "altitude": 198.51,
+        "dop": 10.0
+    },
+    "camera": "v2 dji fc300s 4000 2250 brown 0.5555",
+    "opk": {
+        "omega": 0.04923624131941026,
+        "phi": -0.053863108256838294,
+        "kappa": -47.593411874486364
+    },
+    "speed": [
+        0.30000001192092896,
+        0.30000001192092896,
+        0.0
+    ]
+}

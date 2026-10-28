@@ -1,0 +1,52 @@
+# Pixi container layout: https://pixi.prefix.dev/latest/deployment/container/
+
+FROM ghcr.io/prefix-dev/pixi:latest AS dev
+
+# devcontainer common-utils creates user `odm`; drop default `ubuntu` (uid 1000) if present.
+RUN if id "ubuntu" >/dev/null 2>&1; then \
+        userdel -f -r ubuntu || echo "Failed to delete ubuntu user"; \
+    fi
+
+WORKDIR /code
+
+FROM dev AS builder
+
+COPY pixi.toml pixi.lock ./
+RUN pixi install --locked \
+    && pixi install --locked -e prod \
+    && mkdir -p scripts \
+    && pixi shell-hook -e prod -s bash > scripts/pixi-shell-hook \
+    && rm -rf .pixi/envs/prod/include .pixi/envs/prod/share/doc .pixi/envs/prod/share/man .pixi/envs/prod/share/info
+
+COPY . ./
+RUN pixi run build && pixi run test
+
+RUN mkdir -p /odm-runtime/SuperBuild /odm-runtime/scripts \
+    && cp -a SuperBuild/install /odm-runtime/SuperBuild/ \
+    && cp -a opendm stages contrib /odm-runtime/ \
+    && cp run.py settings.yaml VERSION /odm-runtime/ \
+    && cp scripts/docker-entrypoint.sh scripts/smoke.py /odm-runtime/scripts/
+
+FROM ubuntu:24.04 AS runtime
+
+# revision, version and created are stamped at build time: by metadata-action
+# in the publish workflows, by scripts/docker-build.py locally.
+LABEL org.opencontainers.image.source="https://github.com/OpenDroneMap/ODM" \
+      org.opencontainers.image.title="OpenDroneMap" \
+      org.opencontainers.image.description="Command line toolkit for processing aerial drone imagery" \
+      org.opencontainers.image.url="https://www.opendronemap.org" \
+      org.opencontainers.image.documentation="https://docs.opendronemap.org" \
+      org.opencontainers.image.licenses="AGPL-3.0-only" \
+      org.opencontainers.image.vendor="OpenDroneMap"
+
+ENV DEBIAN_FRONTEND=noninteractive
+WORKDIR /code
+
+COPY --from=builder /code/.pixi/envs/prod .pixi/envs/prod
+COPY --from=builder /code/scripts/pixi-shell-hook scripts/pixi-shell-hook
+COPY --from=builder /odm-runtime/ ./
+
+RUN chmod +x scripts/docker-entrypoint.sh run.py \
+    && bash scripts/docker-entrypoint.sh python3 scripts/smoke.py
+
+ENTRYPOINT ["/code/scripts/docker-entrypoint.sh"]

@@ -1,0 +1,24 @@
+services:
+  db:
+    container_name: drone-webodm-db
+  broker:
+    container_name: drone-webodm-broker
+  webapp:
+    container_name: drone-webodm-webapp
+    ports: !override
+      - "127.0.0.1:8000:8000"
+    environment:
+      WEB_CONCURRENCY: "2"
+  worker:
+    container_name: drone-webodm-worker
+    environment:
+      WEB_CONCURRENCY: "2"
+  node-odx-1:
+    container_name: drone-webodm-node
+    command: ["--max-concurrency", "4", "--parallel-queue-processing", "1"]
+    volumes:
+      - nodedata:/var/www/data
+      - nodetmp:/var/www/tmp
+volumes:
+  nodedata:
+  nodetmp:

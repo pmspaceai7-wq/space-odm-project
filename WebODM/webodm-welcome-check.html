@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <!-- 
+    WebODM - User-friendly, commercial grade software for processing aerial imagery.
+    Copyright (C) 2020  WebODM Authors
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as
+    published by the Free Software Foundation, either version 3 of the
+    License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+    -->
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="WebODM Contributors">
+    <meta name="robots" content="noindex, nofollow">
+    
+    <link rel="icon" type="image/png" href="/media/CACHE/images/settings/logo512/af30a8ce19b9126af8cfbb7607eebf4c.png" sizes="32x32">
+
+    <link rel="stylesheet" type="text/css" href="/static/app/css/bootstrap.min.css" />
+
+    <link rel="preload" href="/static/app/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="/static/app/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    
+    <link href="/static/app/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/static/app/css/metisMenu.min.css" rel="stylesheet">
+    <link href="/static/app/css/sb-admin-2.css" rel="stylesheet">
+    
+
+    <script src="/static/app/js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="/static/app/js/vendor/es6-shim.min.js"></script>
+    <script src="/static/app/js/vendor/jquery-1.11.2.min.js"></script>
+    <script src="/static/app/js/vendor/system.js"></script>
+    <script src="/jsi18n/"></script>
+
+    
+
+    
+    <link type="text/css" href="/static/app/bundles/./css/main-65c551c495a91a026482.css" rel="stylesheet" />
+<script type="text/javascript" src="/static/app/bundles/main-65c551c495a91a026482.js" ></script>
+
+    
+    <script src='/plugins/objdetect/main.js'></script>
+<script src='/plugins/snapshot/main.js'></script>
+<script src='/plugins/measure/main.js'></script>
+<script src='/plugins/contours/main.js'></script>
+<script src='/plugins/fullscreen/main.js'></script>
+<script src='/plugins/lightning/main.js'></script>
+    
+    
+
+    <title>Welcome - WebODM</title>
+
+    
+    <style type="text/css">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Primary */
+body,
+ul#side-menu.nav a,
+.console,
+.alert,
+.form-control,
+.dropdown-menu > li > a,
+.theme-color-primary
+{
+    color: #2c3e50;
+}
+.theme-border-primary{
+    border-color: #2c3e50;
+}
+.tooltip .tooltip-inner{
+	background-color: #2c3e50;
+}
+.tooltip.left .tooltip-arrow{ border-left-color: #2c3e50; }
+.tooltip.top .tooltip-arrow{ border-top-color: #2c3e50; }
+.tooltip.bottom .tooltip-arrow{ border-bottom-color: #2c3e50; }
+.tooltip.right .tooltip-arrow{ border-right-color: #2c3e50; }
+
+.theme-fill-primary{
+    fill: #2c3e50;
+}
+.theme-stroke-primary{
+    stroke: #2c3e50;
+}
+.text-muted{
+	color: #2c3e50;
+	opacity: 0.5;
+}
+
+/* Secondary */
+body,
+.navbar-default,
+.console,
+.alert,
+.modal-content,
+.form-control,
+.dropdown-menu,
+.theme-secondary
+{
+	background-color: #ffffff;
+}
+
+.theme-secondary-complementary{
+	background-color: #000000;
+	color: #ffffff;
+}
+
+.tooltip > .tooltip-inner{
+	color: #ffffff;
+}
+
+.alert.close:hover{
+    color: #000000;
+}
+.alert.close:focus{
+    color: #000000;
+}
+
+.pagination li > a,
+.pagination .disabled > a,
+.pagination .disabled > a:hover, .pagination .disabled > a:focus{
+	color: #395068;
+	background-color: #ffffff;
+	border-color: #b2b2b2;
+}
+.pagination li > a{
+	color: #2c3e50;
+}
+.theme-border-secondary-07{
+	border-color: #b2b2b2 !important;
+}
+
+.btn-secondary, .btn-secondary:active, .open>.dropdown-toggle.btn-secondary{
+	background-color: #ffffff;
+	border-color: #ffffff;
+	color: #2c3e50;
+}
+
+.btn-secondary:hover, .open>.dropdown-toggle.btn-secondary:hover,
+.btn-secondary:active, .open>.dropdown-toggle.btn-secondary:active,
+.btn-secondary:focus, .open>.dropdown-toggle.btn-secondary:focus{
+    background-color: #e5e5e5;
+    border-color: #e5e5e5;
+    color: #2c3e50;
+}
+
+
+/* Tertiary */
+a, a:hover, a:focus{
+	color: #3498db;
+}
+.progress-bar-success{
+    background-color: #3498db;
+}
+
+/* Button primary */
+#navbar-top .navbar-top-links a:hover,
+#navbar-top .navbar-top-links a:focus,
+#navbar-top .navbar-top-links .open > a{
+    background-color: #2c3e50;
+    color: #ffffff;
+}
+
+#navbar-top ul#side-menu a:focus{
+    background-color: inherit;
+    color: inherit;
+}
+
+#navbar-top ul#side-menu a:hover, #navbar-top ul#side-menu a.active:hover{
+	background-color: #2c3e50;
+	color: #ffffff;
+}
+
+.btn-primary, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary{
+	background-color: #2c3e50;
+	border-color: #2c3e50;
+	color: #ffffff;
+}
+
+.btn-primary:hover, .btn-primary.active:hover, .open>.dropdown-toggle.btn-primary:hover,
+.btn-primary:active, .btn-primary.active:active, .open>.dropdown-toggle.btn-primary:active,
+.btn-primary:focus, .btn-primary.active:focus, .open>.dropdown-toggle.btn-primary:focus,
+.btn-primary[disabled]:hover, .btn-primary.active[disabled]:hover, .open>.dropdown-toggle.btn-primary[disabled]:hover,
+.btn-primary[disabled]:focus, .btn-primary.active[disabled]:focus, .open>.dropdown-toggle.btn-primary[disabled]:focus,
+.btn-primary[disabled]:active, .btn-primary.active[disabled]:active, .open>.dropdown-toggle.btn-primary[disabled]:active{
+    background-color: #273748;
+    border-color: #273748;
+    color: #ffffff;
+}
+
+/* Button default */
+.btn-default, .btn-default:active, .open>.dropdown-toggle.btn-default{
+	background-color: #95a5a6;
+	border-color: #95a5a6;
+	color: #ffffff;
+
+}
+.btn-default:hover, .open>.dropdown-toggle.btn-default:hover,
+.btn-default:active, .open>.dropdown-toggle.btn-default:active,
+.btn-default:focus, .open>.dropdown-toggle.btn-default:focus,
+.btn-default[disabled]:hover, .open>.dropdown-toggle.btn-default[disabled]:hover,
+.btn-default[disabled]:focus, .open>.dropdown-toggle.btn-default[disabled]:focus,
+.btn-default[disabled]:active, .open>.dropdown-toggle.btn-default[disabled]:active{
+	background-color: #869495;
+	border-color: #869495;
+	color: #ffffff;
+}
+
+.pagination>.active>a, .pagination>.active>span, .pagination>.active>a:hover, .pagination>.active>span:hover, .pagination>.active>a:focus, .pagination>.active>span:focus,
+.pagination .active > a:hover, .pagination .active > a:focus,
+.pagination li > a:hover, .pagination li > a:focus{
+	background-color: #95a5a6;
+	color: #ffffff;
+}
+
+/* Button danger */
+.btn-danger, .btn-danger:active, .open>.dropdown-toggle.btn-danger{
+	background-color: #e74c3c;
+	border-color: #e74c3c;
+	color: #ffffff;
+}
+.btn-danger:hover, .open>.dropdown-toggle.btn-danger:hover,
+.btn-danger:active, .open>.dropdown-toggle.btn-danger:active,
+.btn-danger:focus, .open>.dropdown-toggle.btn-danger:focus,
+.btn-danger[disabled]:hover, .open>.dropdown-toggle.btn-danger[disabled]:hover,
+.btn-danger[disabled]:active, .open>.dropdown-toggle.btn-danger[disabled]:active,
+.btn-danger[disabled]:focus, .open>.dropdown-toggle.btn-danger[disabled]:focus{
+	background-color: #cf4436;
+	border-color: #cf4436;
+	color: #ffffff;
+}
+
+.theme-color-button-danger{
+    color: #e74c3c;
+}
+
+.theme-color-button-primary{
+    color: #2c3e50;
+}
+
+/* Header background */
+#navbar-top{
+	background-color: #3498db;
+}
+
+/* Header primary */
+.navbar-default .navbar-link,
+#navbar-top .navbar-top-links a.dropdown-toggle,
+#navbar-top .navbar-top-links a.nav-link,
+#navbar-top .navbar-text{
+	color: #ffffff;
+}
+
+.navbar-default .navbar-toggle .icon-bar{
+	background-color: #ffffff;
+}
+.navbar-default .navbar-toggle:hover .icon-bar,
+.navbar-default .navbar-toggle:active .icon-bar,
+.navbar-default .navbar-toggle:focus .icon-bar{
+	background-color: #ffffff;
+}
+
+.navbar-default .navbar-link:hover,
+#navbar-top .navbar-top-links a.dropdown-toggle:hover,
+#navbar-top .navbar-top-links a.nav-link:hover,
+#navbar-top .navbar-top-links .dropdown.open a.dropdown-toggle{
+	color: #ffffff;
+}
+
+/* Border */
+.sidebar ul li,
+.project-list-item,
+#page-wrapper,
+table-bordered>thead>tr>th, .table-bordered>thead>tr>th, table-bordered>tbody>tr>th, .table-bordered>tbody>tr>th, table-bordered>tfoot>tr>th, .table-bordered>tfoot>tr>th, table-bordered>thead>tr>td, .table-bordered>thead>tr>td, table-bordered>tbody>tr>td, .table-bordered>tbody>tr>td, table-bordered>tfoot>tr>td, .table-bordered>tfoot>tr>td,
+footer,
+.modal-content,
+.modal-header,
+.modal-footer,
+.dropdown-menu
+{
+	border-color: #e7e7e7;
+}
+.dropdown-menu .divider{
+	background-color: #e7e7e7;
+}
+.popover-title{
+	border-bottom-color: #e7e7e7;
+}
+.theme-border{
+    border-color: #e7e7e7 !important;
+}
+
+/* Highlight */
+.task-list-item:nth-child(odd),
+.table-striped>tbody>tr:nth-of-type(odd),
+select.form-control option[disabled],
+.theme-background-highlight{
+	background-color: #f7f7f7;
+}
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus{
+	background-color: #f7f7f7;
+	color: #2c3e50;
+}
+pre.prettyprint,
+.form-control,
+.theme-border-highlight{
+	border-color: #f7f7f7;
+}
+pre.prettyprint:focus,
+.form-control:focus{
+	border-color: #acacac;
+}
+
+.theme-border-highlight-9{
+	border-color: #dedede;
+}
+
+.theme-border-highlight-8{
+	border-color: #c5c5c5;
+}
+
+.theme-border-highlight-7-hover:hover{
+	border-color: #acacac;
+}
+
+.theme-background-highlight-hover:hover{
+	background-color: #f2f2f2;
+}
+.theme-background-highlight-8-hover:hover{
+	background-color: #c5c5c5;
+}
+
+/* Dialog warning */
+.alert-warning{
+	border-color: #f39c12;
+}
+
+/* Success */
+.task-list-item .status-label.done, .theme-background-success{
+	background-color: #cbffcd;
+}
+
+/* Failed */
+.task-list-item .status-label.error, .theme-background-failed{
+	background-color: #ffcbcb;
+}
+
+/* ModelView.jsx specific */
+.model-view #potree_sidebar_container .dropdown-menu > li > a{
+	color: #2c3e50;
+}
+
+/* MapView.jsx specific */
+.leaflet-bar a, .leaflet-control > a{
+	background-color: #ffffff !important;
+	border-color: #ffffff !important;
+	color: #2c3e50 !important;
+}
+
+.leaflet-bar a:hover, .leaflet-control > a:hover{
+	background-color: #e5e5e5 !important;
+	border-color: #e5e5e5 !important;
+}
+
+.leaflet-bar a.selected{
+	background-color: #95a5a6 !important;
+	color: #ffffff !important;
+}
+
+.leaflet-popup-content-wrapper{
+	background-color: #ffffff !important;
+	color: #2c3e50 !important;
+}
+.leaflet-popup-content-wrapper a{
+	color: #3498db !important;
+}
+
+.leaflet-container a.leaflet-popup-close-button{
+	color: #2c3e50 !important;
+}
+.leaflet-container a.leaflet-popup-close-button:hover{
+	color: #000000 !important;
+}
+
+.tag-badge{
+	background-color: #95a5a6;
+	border-color: #95a5a6;
+	color: #ffffff;
+}
+
+.tag-badge a, .tag-badge a:hover{
+	color: #ffffff;
+}
+
+
+@keyframes placeHolderShimmer {
+	0%{ background-position: 100% 0; }
+	100%{ background-position: -100% 0; }
+}
+@keyframes placeHolderPulse {
+	0%{ opacity: 0.2; }
+	50%{ opacity: 0.4; }
+	100%{ opacity: 0.2; }
+}
+
+.placeholder-item{
+	border-radius: 4px;
+	background: #f7f7f7;
+}
+.placeholder-item.shimmer{
+	animation-duration: 1.5s;
+	animation-fill-mode: forwards;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	animation-name: placeHolderShimmer;
+	background: #f7f7f7;
+	background: linear-gradient(to right, #f7f7f7 8%, #dedede 18%, #f7f7f7 33%);
+	background-size: 200% 100%;
+}
+.placeholder-item.border{
+	border: 1px solid #e7e7e7;
+}
+.placeholder-item i{
+	color: #acacac;
+	font-size: 800%;
+	opacity: 0.2;
+	animation-duration: 0.75s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	animation-name: placeHolderPulse;
+}
+
+    </style>
+    
+
+    
+    
+
+    <style type="text/css">
+        
+    </style>
+</head>
+<body data-admin-utc-offset="0">
+
+
+
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div id="wrapper">
+        
+
+        <nav id="navbar-top" class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                
+            
+                
+                    <a class="navbar-brand" href="/"><img src="/media/CACHE/images/settings/logo512/53af5493584d5f7bc2141c753d869d4e.png" alt="WebODM" /></a>
+                    <a class="navbar-link" href="/"><p class="navbar-text">WebODM</p></a>
+                
+            </div>
+
+            
+        </nav>
+
+        
+<style type="text/css">
+footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+</style>
+<section class="main">
+    <div class="content">
+        
+
+
+<canvas id="canvas" style="position: absolute; top: 0; left: 0;"></canvas>
+<script type="text/javascript">
+    // Confetti animation
+    (function () {
+    // globals
+    var canvas;
+    var ctx;
+    var W;
+    var H;
+    var mp = 150; //max particles
+    var particles = [];
+    var angle = 0;
+    var tiltAngle = 0;
+    var confettiActive = true;
+    var animationComplete = true;
+    var deactivationTimerHandler;
+    var reactivationTimerHandler;
+    var animationHandler;
+
+    // objects
+
+    var particleColors = {
+        colorOptions: ["DodgerBlue", "OliveDrab", "Gold", "pink", "SlateBlue", "lightblue", "Violet", "PaleGreen", "SteelBlue", "SandyBrown", "Chocolate", "Crimson"],
+        colorIndex: 0,
+        colorIncrementer: 0,
+        colorThreshold: 10,
+        getColor: function () {
+            if (this.colorIncrementer >= 10) {
+                this.colorIncrementer = 0;
+                this.colorIndex++;
+                if (this.colorIndex >= this.colorOptions.length) {
+                    this.colorIndex = 0;
+                }
+            }
+            this.colorIncrementer++;
+            return this.colorOptions[this.colorIndex];
+        }
+    }
+
+    function confettiParticle(color) {
+        this.x = Math.random() * W; // x-coordinate
+        this.y = (Math.random() * H) - H; //y-coordinate
+        this.r = RandomFromTo(10, 30); //radius;
+        this.d = (Math.random() * mp) + 10; //density;
+        this.color = color;
+        this.tilt = Math.floor(Math.random() * 10) - 10;
+        this.tiltAngleIncremental = (Math.random() * 0.07) + .05;
+        this.tiltAngle = 0;
+
+        this.draw = function () {
+            ctx.beginPath();
+            ctx.lineWidth = this.r / 2;
+            ctx.strokeStyle = this.color;
+            ctx.moveTo(this.x + this.tilt + (this.r / 4), this.y);
+            ctx.lineTo(this.x + this.tilt, this.y + this.tilt + (this.r / 4));
+            return ctx.stroke();
+        }
+    }
+
+    $(document).ready(function () {
+        SetGlobals();
+        InitializeButton();
+        InitializeConfetti();
+
+        $(window).resize(function () {
+            W = window.innerWidth;
+            H = window.innerHeight;
+            canvas.width = W;
+            canvas.height = H;
+        });
+
+    });
+
+    function InitializeButton() {
+        $("input").click(DeactivateConfetti);
+    }
+
+    function SetGlobals() {
+        canvas = document.getElementById("canvas");
+        ctx = canvas.getContext("2d");
+        W = window.innerWidth;
+        H = window.innerHeight;
+        canvas.width = W;
+        canvas.height = H;
+    }
+
+    function InitializeConfetti() {
+        particles = [];
+        animationComplete = false;
+        for (var i = 0; i < mp; i++) {
+            var particleColor = particleColors.getColor();
+            particles.push(new confettiParticle(particleColor));
+        }
+        StartConfetti();
+    }
+
+    function Draw() {
+        ctx.clearRect(0, 0, W, H);
+        var results = [];
+        for (var i = 0; i < mp; i++) {
+            (function (j) {
+                results.push(particles[j].draw());
+            })(i);
+        }
+        Update();
+
+        return results;
+    }
+
+    function RandomFromTo(from, to) {
+        return Math.floor(Math.random() * (to - from + 1) + from);
+    }
+
+
+    function Update() {
+        var remainingFlakes = 0;
+        var particle;
+        angle += 0.01;
+        tiltAngle += 0.1;
+
+        for (var i = 0; i < mp; i++) {
+            particle = particles[i];
+            if (animationComplete) return;
+
+            if (!confettiActive && particle.y < -15) {
+                particle.y = H + 100;
+                continue;
+            }
+
+            stepParticle(particle, i);
+
+            if (particle.y <= H) {
+                remainingFlakes++;
+            }
+            CheckForReposition(particle, i);
+        }
+
+        if (remainingFlakes === 0) {
+            StopConfetti();
+        }
+    }
+
+    function CheckForReposition(particle, index) {
+        if ((particle.x > W + 20 || particle.x < -20 || particle.y > H) && confettiActive) {
+            if (index % 5 > 0 || index % 2 == 0) //66.67% of the flakes
+            {
+                repositionParticle(particle, Math.random() * W, -10, Math.floor(Math.random() * 10) - 20);
+            } else {
+                if (Math.sin(angle) > 0) {
+                    //Enter from the left
+                    repositionParticle(particle, -20, Math.random() * H, Math.floor(Math.random() * 10) - 20);
+                } else {
+                    //Enter from the right
+                    repositionParticle(particle, W + 20, Math.random() * H, Math.floor(Math.random() * 10) - 20);
+                }
+            }
+        }
+    }
+    function stepParticle(particle, particleIndex) {
+        particle.tiltAngle += particle.tiltAngleIncremental;
+        particle.y += (Math.cos(angle + particle.d) + 3 + particle.r / 2) / 2;
+        particle.x += Math.sin(angle);
+        particle.tilt = (Math.sin(particle.tiltAngle - (particleIndex / 3))) * 15;
+    }
+
+    function repositionParticle(particle, xCoordinate, yCoordinate, tilt) {
+        particle.x = xCoordinate;
+        particle.y = yCoordinate;
+        particle.tilt = tilt;
+    }
+
+    function StartConfetti() {
+        W = window.innerWidth;
+        H = window.innerHeight;
+        canvas.width = W;
+        canvas.height = H;
+        (function animloop() {
+            if (animationComplete) return null;
+            animationHandler = requestAnimFrame(animloop);
+            return Draw();
+        })();
+    }
+
+    function ClearTimers() {
+        clearTimeout(reactivationTimerHandler);
+        clearTimeout(animationHandler);
+    }
+
+    function DeactivateConfetti() {
+        confettiActive = false;
+        ClearTimers();
+    }
+
+    function StopConfetti() {
+        animationComplete = true;
+        if (ctx == undefined) return;
+        ctx.clearRect(0, 0, W, H);
+    }
+
+    window.requestAnimFrame = (function () {
+        return window.requestAnimationFrame ||
+        window.webkitRequestAnimationFrame ||
+        window.mozRequestAnimationFrame ||
+        window.oRequestAnimationFrame ||
+        window.msRequestAnimationFrame ||
+        function (callback) {
+            return window.setTimeout(callback, 1000 / 60);
+        };
+    })();
+})();
+</script>
+
+
+        <div class="col-sm-12 col-md-6 col-md-offset-3 top-buffer">
+            
+    
+        <h3>Welcome! ☺</h3>
+        <div style="margin-bottom: 28px;">Before we get started, we need to create an administrator account for you:</div>
+    
+
+    <form action="" method="post" class="form-horizontal" role="form"><input type="hidden" name="csrfmiddlewaretoken" value="CNkRBzQPhADqqwGcZ1yC108fcrzzG8t3RJdOeLdoVEhyhSsskHe0MMq1XdobGNPr">
+        
+            
+
+<div class="form-group ">
+    <label for="id_username" class="col-sm-2 control-label">Username</label>
+    <div class="col-sm-10 ">
+        <input type="text" name="username" maxlength="150" class="form-control" required id="id_username">
+        
+        
+            <span class="help-block ">Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</span>
+        
+    </div>
+</div>
+        
+            
+
+<div class="form-group ">
+    <label for="id_password" class="col-sm-2 control-label">Password</label>
+    <div class="col-sm-10 ">
+        <input type="password" name="password" maxlength="128" class="form-control" required id="id_password">
+        
+        
+    </div>
+</div>
+        
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" class="btn btn-default">Create Account</button>
+            </div>
+        </div>
+    </form>
+
+        </div>
+    </div>
+</section>
+
+    </div>
+
+    
+    
+    
+
+</body>
+
+<script>
+
+window.__taskOptionsDocsLink = "";
+
+window.__gcpDocsLink = "https://docs.webodm.org/ground-control-points/#gcp-file-format";
+
+window.__splatDocsLink = "https://docs.webodm.org/gaussian-splats/#software";
+window.__loggedUser = "";
+
+$(function(){
+    $(window).bind("load resize", function() {
+        
+        var topOffset = 50;
+        
+
+        var width = (this.window.innerWidth > 0) ? this.window.innerWidth : this.screen.width;
+        if (width < 768) {
+            $('div.navbar-collapse').addClass('collapse');
+            
+            topOffset = 100; // 2-row-menu
+            
+        } else {
+            $('div.navbar-collapse').removeClass('collapse');
+        }
+
+        var height = ((this.window.innerHeight > 0) ? this.window.innerHeight : this.screen.height) - 1;
+        height = height - topOffset;
+        if (height < 1) height = 1;
+        if (height > topOffset) {
+            $("#page-wrapper").css("min-height", (height) + "px");
+        }
+    });
+
+    var url = window.location;
+    var element = $('ul.nav a').filter(function() {
+     return this.href == url;
+    }).addClass('active').parent();
+
+    while(true){
+        if (element.is('li')){
+            element = element.parent().addClass('in');
+        } else {
+            break;
+        }
+    }
+
+    if (element.parent().is('li')) element.parent().addClass('active');
+});
+
+</script>
+<script src="/static/app/js/vendor/bootstrap.min.js"></script>
+
+
+</html>

@@ -1,0 +1,6 @@
+node_modules/
+.env
+.env.production
+storage/
+*.log
+test-results/

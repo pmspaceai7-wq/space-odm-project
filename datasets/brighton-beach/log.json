@@ -1,0 +1,1169 @@
+{
+    "odmVersion": "3.6.2",
+    "memory": {
+        "total": 7784,
+        "available": 6365
+    },
+    "cpus": 16,
+    "images": 18,
+    "options": {
+        "3d_tiles": false,
+        "align": null,
+        "auto_boundary": false,
+        "auto_boundary_distance": 0,
+        "bg_removal": false,
+        "boundary": {},
+        "build_overviews": false,
+        "camera_lens": "auto",
+        "cameras": {},
+        "cog": false,
+        "copy_to": null,
+        "crop": 3,
+        "dem_decimation": 1,
+        "dem_euclidean_map": false,
+        "dem_gapfill_steps": 3,
+        "dem_resolution": 5,
+        "dsm": true,
+        "dtm": false,
+        "end_with": "odm_postprocess",
+        "fast_orthophoto": false,
+        "feature_quality": "medium",
+        "feature_type": "dspsift",
+        "force_gps": false,
+        "gcp": null,
+        "geo": null,
+        "gltf": false,
+        "gps_accuracy": 3,
+        "gps_z_offset": 0,
+        "ignore_gsd": false,
+        "matcher_neighbors": 0,
+        "matcher_order": 0,
+        "matcher_type": "flann",
+        "max_concurrency": 4,
+        "merge": "all",
+        "merge_skip_blending": false,
+        "mesh_octree_depth": 11,
+        "mesh_size": 200000,
+        "min_num_features": 10000,
+        "name": "brighton-beach",
+        "no_gpu": false,
+        "optimize_disk_space": false,
+        "orthophoto_compression": "DEFLATE",
+        "orthophoto_cutline": false,
+        "orthophoto_kmz": false,
+        "orthophoto_no_tiled": false,
+        "orthophoto_png": false,
+        "orthophoto_resolution": 10.0,
+        "pc_classify": false,
+        "pc_copc": false,
+        "pc_csv": false,
+        "pc_ept": false,
+        "pc_filter": 5,
+        "pc_las": false,
+        "pc_quality": "low",
+        "pc_rectify": false,
+        "pc_sample": 0,
+        "pc_skip_geometric": false,
+        "primary_band": "auto",
+        "project_path": "/datasets/brighton-beach",
+        "radiometric_calibration": "none",
+        "rerun": null,
+        "rerun_all": false,
+        "rerun_from": null,
+        "rolling_shutter": false,
+        "rolling_shutter_readout": 0,
+        "sfm_algorithm": "incremental",
+        "sfm_no_partial": false,
+        "skip_3dmodel": false,
+        "skip_band_alignment": false,
+        "skip_orthophoto": false,
+        "skip_report": false,
+        "sky_removal": false,
+        "sm_cluster": null,
+        "sm_no_align": false,
+        "smrf_scalar": 1.25,
+        "smrf_slope": 0.15,
+        "smrf_threshold": 0.5,
+        "smrf_window": 18.0,
+        "split": 999999,
+        "split_image_groups": null,
+        "split_overlap": 150,
+        "texturing_keep_unseen_faces": false,
+        "texturing_single_material": false,
+        "texturing_skip_global_seam_leveling": false,
+        "tiles": false,
+        "use_3dmesh": false,
+        "use_exif": false,
+        "use_fixed_camera_params": false,
+        "use_hybrid_bundle_adjustment": false,
+        "video_limit": 500,
+        "video_resolution": 4000
+    },
+    "startTime": "2026-10-26T06:17:40.423141",
+    "stages": [
+        {
+            "name": "dataset",
+            "startTime": "2026-10-26T06:17:42.207783",
+            "messages": [
+                {
+                    "message": "Running dataset stage",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading dataset from: /datasets/brighton-beach/images",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading 18 images",
+                    "type": "info"
+                },
+                {
+                    "message": "Wrote images database: /datasets/brighton-beach/images.json",
+                    "type": "info"
+                },
+                {
+                    "message": "Found 18 usable images",
+                    "type": "info"
+                },
+                {
+                    "message": "Finished dataset stage",
+                    "type": "info"
+                }
+            ]
+        },
+        {
+            "name": "split",
+            "startTime": "2026-10-26T06:17:46.935573",
+            "messages": [
+                {
+                    "message": "Running split stage",
+                    "type": "info"
+                },
+                {
+                    "message": "Normal dataset, will process all at once.",
+                    "type": "info"
+                },
+                {
+                    "message": "Finished split stage",
+                    "type": "info"
+                }
+            ]
+        },
+        {
+            "name": "merge",
+            "startTime": "2026-10-26T06:17:46.943674",
+            "messages": [
+                {
+                    "message": "Running merge stage",
+                    "type": "info"
+                },
+                {
+                    "message": "Normal dataset, nothing to merge.",
+                    "type": "info"
+                },
+                {
+                    "message": "Finished merge stage",
+                    "type": "info"
+                }
+            ]
+        },
+        {
+            "name": "opensfm",
+            "startTime": "2026-10-26T06:17:46.946968",
+            "messages": [
+                {
+                    "message": "Running opensfm stage",
+                    "type": "info"
+                },
+                {
+                    "message": "Maximum photo dimensions: 4000px",
+                    "type": "info"
+                },
+                {
+                    "message": "Photo dimensions for feature extraction: 1000px",
+                    "type": "info"
+                },
+                {
+                    "message": "Altitude data detected, enabling it for GPS alignment",
+                    "type": "info"
+                },
+                {
+                    "message": [
+                        "use_exif_size: no",
+                        "flann_algorithm: KDTREE",
+                        "feature_process_size: 1000",
+                        "feature_min_frames: 10000",
+                        "processes: 4",
+                        "matching_gps_neighbors: 0",
+                        "matching_gps_distance: 0",
+                        "matching_graph_rounds: 50",
+                        "optimize_camera_parameters: yes",
+                        "reconstruction_algorithm: incremental",
+                        "undistorted_image_format: tif",
+                        "bundle_outlier_filtering_type: AUTO",
+                        "sift_peak_threshold: 0.066",
+                        "align_orientation_prior: vertical",
+                        "triangulation_type: ROBUST",
+                        "retriangulation_ratio: 2",
+                        "matcher_type: FLANN",
+                        "feature_type: DSPSIFT",
+                        "use_altitude_tag: yes",
+                        "align_method: auto",
+                        "local_bundle_radius: 0"
+                    ],
+                    "type": "info"
+                },
+                {
+                    "message": "Wrote reference_lla.json",
+                    "type": "info"
+                },
+                {
+                    "message": "running \"/code/SuperBuild/install/bin/opensfm/bin/opensfm\" detect_features \"/datasets/brighton-beach/opensfm\"",
+                    "type": "info"
+                },
+                {
+                    "message": "running \"/code/SuperBuild/install/bin/opensfm/bin/opensfm\" match_features \"/datasets/brighton-beach/opensfm\"",
+                    "type": "info"
+                },
+                {
+                    "message": "running \"/code/SuperBuild/install/bin/opensfm/bin/opensfm\" create_tracks \"/datasets/brighton-beach/opensfm\"",
+                    "type": "info"
+                },
+                {
+                    "message": "running \"/code/SuperBuild/install/bin/opensfm/bin/opensfm\" reconstruct \"/datasets/brighton-beach/opensfm\"",
+                    "type": "info"
+                },
+                {
+                    "message": "Export reconstruction stats",
+                    "type": "info"
+                },
+                {
+                    "message": "running \"/code/SuperBuild/install/bin/opensfm/bin/opensfm\" compute_statistics --diagram_max_points 100000 \"/datasets/brighton-beach/opensfm\"",
+                    "type": "info"
+                },
+                {
+                    "message": "running \"/code/SuperBuild/install/bin/opensfm/bin/opensfm\" export_geocoords --reconstruction --proj \"+proj=utm +zone=15 +datum=WGS84 +units=m +no_defs +type=crs\" --offset-x 576705.0 --offset-y 5188170.0 \"/datasets/brighton-beach/opensfm\"",
+                    "type": "info"
+                },
+                {
+                    "message": "Updating /datasets/brighton-beach/opensfm/config.yaml",
+                    "type": "info"
+                },
+                {
+                    "message": "undistorted_image_max_size: 1000",
+                    "type": "info"
+                },
+                {
+                    "message": "Undistorting /datasets/brighton-beach/opensfm ...",
+                    "type": "info"
+                },
+                {
+                    "message": "running \"/code/SuperBuild/install/bin/opensfm/bin/opensfm\" export_visualsfm --points \"/datasets/brighton-beach/opensfm\"",
+                    "type": "info"
+                },
+                {
+                    "message": "Finished opensfm stage",
+                    "type": "info"
+                }
+            ]
+        },
+        {
+            "name": "openmvs",
+            "startTime": "2026-10-26T06:18:18.018689",
+            "messages": [
+                {
+                    "message": "Running openmvs stage",
+                    "type": "info"
+                },
+                {
+                    "message": "running \"/code/SuperBuild/install/bin/opensfm/bin/opensfm\" export_openmvs \"/datasets/brighton-beach/opensfm\"",
+                    "type": "info"
+                },
+                {
+                    "message": "Depthmap resolution set to: 320px",
+                    "type": "info"
+                },
+                {
+                    "message": "Running dense reconstruction. This might take a while.",
+                    "type": "info"
+                },
+                {
+                    "message": "Estimating depthmaps",
+                    "type": "info"
+                },
+                {
+                    "message": "No nvidia-smi detected",
+                    "type": "info"
+                },
+                {
+                    "message": "running \"/code/SuperBuild/install/bin/DensifyPointCloud\" \"/datasets/brighton-beach/opensfm/undistorted/openmvs/scene.mvs\" --resolution-level 2 --dense-config-file \"/datasets/brighton-beach/opensfm/undistorted/openmvs/Densify.ini\" --max-resolution 1000 --min-resolution 320 --max-threads 4 --number-views-fuse 2 --sub-resolution-levels 2 --archive-type 3 -w \"/datasets/brighton-beach/opensfm/undistorted/openmvs/depthmaps\" -v 0 --cuda-device -2",
+                    "type": "info"
+                },
+                {
+                    "message": "running \"/code/SuperBuild/install/bin/DensifyPointCloud\" --filter-point-cloud -20 -i \"/datasets/brighton-beach/opensfm/undistorted/openmvs/scene_dense.mvs\" -v 0 --cuda-device -2",
+                    "type": "info"
+                },
+                {
+                    "message": "Finished openmvs stage",
+                    "type": "info"
+                }
+            ]
+        },
+        {
+            "name": "odm_filterpoints",
+            "startTime": "2026-10-26T06:18:52.418734",
+            "messages": [
+                {
+                    "message": "Running odm_filterpoints stage",
+                    "type": "info"
+                },
+                {
+                    "message": "Filtering /datasets/brighton-beach/opensfm/undistorted/openmvs/scene_dense_dense_filtered.ply (statistical, meanK 16, standard deviation 5)",
+                    "type": "info"
+                },
+                {
+                    "message": "running \"/code/SuperBuild/install/bin/FPCFilter\" --input \"/datasets/brighton-beach/opensfm/undistorted/openmvs/scene_dense_dense_filtered.ply\" --output \"/datasets/brighton-beach/odm_filterpoints/point_cloud.ply\" --concurrency 4 --meank 16 --std 5 --stats \"/datasets/brighton-beach/odm_filterpoints/point_cloud_stats.json\"",
+                    "type": "info"
+                },
+                {
+                    "message": "Finished odm_filterpoints stage",
+                    "type": "info"
+                }
+            ]
+        },
+        {
+            "name": "odm_meshing",
+            "startTime": "2026-10-26T06:18:54.161753",
+            "messages": [
+                {
+                    "message": "Running odm_meshing stage",
+                    "type": "info"
+                },
+                {
+                    "message": "Writing ODM Mesh file in: /datasets/brighton-beach/odm_meshing/odm_mesh.ply",
+                    "type": "info"
+                },
+                {
+                    "message": "running \"/code/SuperBuild/install/bin/PoissonRecon\" --in \"/datasets/brighton-beach/odm_filterpoints/point_cloud.ply\" --out \"/datasets/brighton-beach/odm_meshing/odm_mesh.dirty.ply\" --depth 11 --pointWeight 4.0 --samplesPerNode 1.0 --threads 3 --bType 2 --linearFit ",
+                    "type": "info"
+                },
+                {
+                    "message": "running \"/code/SuperBuild/install/bin/ReconstructMesh\" -i \"/datasets/brighton-beach/odm_meshing/odm_mesh.dirty.ply\" -o \"/datasets/brighton-beach/odm_meshing/odm_mesh.ply\" --archive-type 3 --remove-spikes 0 --remove-spurious 20 --smooth 0 --target-face-num 400000 -v 0",
+                    "type": "info"
+                },
+                {
+                    "message": "Writing ODM 2.5D Mesh file in: /datasets/brighton-beach/odm_meshing/odm_25dmesh.ply",
+                    "type": "info"
+                },
+                {
+                    "message": "ODM 2.5D DSM resolution: 0.09",
+                    "type": "info"
+                },
+                {
+                    "message": "Created temporary directory: /datasets/brighton-beach/odm_meshing/tmp",
+                    "type": "info"
+                },
+                {
+                    "message": "Creating DSM for 2.5D mesh",
+                    "type": "info"
+                },
+                {
+                    "message": "running renderdem \"/datasets/brighton-beach/odm_filterpoints/point_cloud.ply\" --outdir \"/datasets/brighton-beach/odm_meshing/tmp\" --output-type max --radiuses 0.1413716694115407,0.19992973221712648,0.2827433388230814 --resolution 0.09 --max-tiles 0 --decimation 1 --classification -1 --tile-size 4096 --force ",
+                    "type": "info"
+                },
+                {
+                    "message": "Generated 3 tiles",
+                    "type": "info"
+                },
+                {
+                    "message": "running gdalbuildvrt -input_file_list \"/datasets/brighton-beach/odm_meshing/tmp/tiles_list.txt\" \"/datasets/brighton-beach/odm_meshing/tmp/tiles.vrt\" ",
+                    "type": "info"
+                },
+                {
+                    "message": "running gdal_translate -co NUM_THREADS=4 -co BIGTIFF=IF_SAFER -co COMPRESS=DEFLATE --config GDAL_CACHEMAX 40.4% -outsize 10% 0 \"/datasets/brighton-beach/odm_meshing/tmp/tiles.vrt\" \"/datasets/brighton-beach/odm_meshing/tmp/tiles.small.tif\"",
+                    "type": "info"
+                },
+                {
+                    "message": "running gdalbuildvrt -resolution highest -r bilinear \"/datasets/brighton-beach/odm_meshing/tmp/merged.vrt\" \"/datasets/brighton-beach/odm_meshing/tmp/tiles.small_filled.tif\" \"/datasets/brighton-beach/odm_meshing/tmp/tiles.vrt\"",
+                    "type": "info"
+                },
+                {
+                    "message": "running gdal_translate -co NUM_THREADS=4 -co TILED=YES -co BIGTIFF=IF_SAFER -co COMPRESS=DEFLATE --config GDAL_CACHEMAX 40.4% \"/datasets/brighton-beach/odm_meshing/tmp/merged.vrt\" \"/datasets/brighton-beach/odm_meshing/tmp/tiles.tif\"",
+                    "type": "info"
+                },
+                {
+                    "message": "running fastrasterfilter \"/datasets/brighton-beach/odm_meshing/tmp/tiles.tif\" --output \"/datasets/brighton-beach/odm_meshing/tmp/mesh_dsm.tif\" --window-size 512 --radius 4 --co TILED=YES --co BIGTIFF=IF_SAFER --co COMPRESS=DEFLATE ",
+                    "type": "info"
+                },
+                {
+                    "message": "Completed smoothing to create /datasets/brighton-beach/odm_meshing/tmp/mesh_dsm.tif in 0:00:00.326865",
+                    "type": "info"
+                },
+                {
+                    "message": "Completed mesh_dsm.tif in 0:00:05.810014",
+                    "type": "info"
+                },
+                {
+                    "message": "Creating mesh from DSM: /datasets/brighton-beach/odm_meshing/tmp/mesh_dsm.tif",
+                    "type": "info"
+                },
+                {
+                    "message": "running \"/code/SuperBuild/install/bin/dem2mesh\" -inputFile \"/datasets/brighton-beach/odm_meshing/tmp/mesh_dsm.tif\" -outputFile \"/datasets/brighton-beach/odm_meshing/odm_25dmesh.dirty.ply\" -maxTileLength 2000 -maxVertexCount 200000 -maxConcurrency 4 -edgeSwapThreshold 0.15 -verbose ",
+                    "type": "info"
+                },
+                {
+                    "message": "running \"/code/SuperBuild/install/bin/ReconstructMesh\" -i \"/datasets/brighton-beach/odm_meshing/odm_25dmesh.dirty.ply\" -o \"/datasets/brighton-beach/odm_meshing/odm_25dmesh.ply\" --archive-type 3 --remove-spikes 0 --remove-spurious 0 --smooth 0 --target-face-num 400000 -v 0",
+                    "type": "info"
+                },
+                {
+                    "message": "Finished odm_meshing stage",
+                    "type": "info"
+                }
+            ]
+        },
+        {
+            "name": "mvs_texturing",
+            "startTime": "2026-10-26T06:21:06.222919",
+            "messages": [
+                {
+                    "message": "Running mvs_texturing stage",
+                    "type": "info"
+                },
+                {
+                    "message": "Writing MVS Textured file in: /datasets/brighton-beach/odm_texturing/odm_textured_model_geo.obj",
+                    "type": "info"
+                },
+                {
+                    "message": "running \"/code/SuperBuild/install/bin/texrecon\" \"/datasets/brighton-beach/opensfm/undistorted/reconstruction.nvm\" \"/datasets/brighton-beach/odm_meshing/odm_mesh.ply\" \"/datasets/brighton-beach/odm_texturing/odm_textured_model_geo\" -d gmi -o gauss_clamping -t none --no_intermediate_results     --num_threads=4 --max_texture_size=8192 ",
+                    "type": "info"
+                },
+                {
+                    "message": "Writing MVS Textured file in: /datasets/brighton-beach/odm_texturing_25d/odm_textured_model_geo.obj",
+                    "type": "info"
+                },
+                {
+                    "message": "running \"/code/SuperBuild/install/bin/texrecon\" \"/datasets/brighton-beach/opensfm/undistorted/reconstruction.nvm\" \"/datasets/brighton-beach/odm_meshing/odm_25dmesh.ply\" \"/datasets/brighton-beach/odm_texturing_25d/odm_textured_model_geo\" -d gmi -o gauss_clamping -t none --no_intermediate_results   --nadir_mode  --num_threads=4 --max_texture_size=8192 ",
+                    "type": "info"
+                },
+                {
+                    "message": "Finished mvs_texturing stage",
+                    "type": "info"
+                }
+            ]
+        },
+        {
+            "name": "odm_georeferencing",
+            "startTime": "2026-10-26T06:21:36.949306",
+            "messages": [
+                {
+                    "message": "Running odm_georeferencing stage",
+                    "type": "info"
+                },
+                {
+                    "message": "Georeferencing point cloud",
+                    "type": "info"
+                },
+                {
+                    "message": "las scale calculated as the minimum of 1/10 estimated spacing or 0.001, which ever is less.",
+                    "type": "info"
+                },
+                {
+                    "message": "running pdal translate -i \"/datasets/brighton-beach/odm_filterpoints/point_cloud.ply\" -o \"/datasets/brighton-beach/odm_georeferencing/odm_georeferenced_model.laz\" ferry transformation --filters.ferry.dimensions=\"views => UserData\" --filters.transformation.matrix=\"1 0 0 576705.0 0 1 0 5188170.0 0 0 1 0 0 0 0 1\" --writers.las.offset_x=576705.0 --writers.las.offset_y=5188170.0 --writers.las.scale_x=0.001 --writers.las.scale_y=0.001 --writers.las.scale_z=0.001 --writers.las.offset_z=0 --writers.las.a_srs=\"+proj=utm +zone=15 +datum=WGS84 +units=m +no_defs +type=crs\"",
+                    "type": "info"
+                },
+                {
+                    "message": "Calculating cropping area and generating bounds shapefile from point cloud",
+                    "type": "info"
+                },
+                {
+                    "message": "running pdal translate -i \"/datasets/brighton-beach/odm_georeferencing/odm_georeferenced_model.laz\" -o \"/datasets/brighton-beach/odm_georeferencing/odm_georeferenced_model.decimated.las\" decimation --filters.decimation.step=40 ",
+                    "type": "info"
+                },
+                {
+                    "message": "running pdal info --boundary --filters.hexbin.edge_length=1 --filters.hexbin.threshold=1 \"/datasets/brighton-beach/odm_georeferencing/odm_georeferenced_model.decimated.las\" > \"/datasets/brighton-beach/odm_georeferencing/odm_georeferenced_model.boundary.json\"",
+                    "type": "info"
+                },
+                {
+                    "message": "running pdal info --summary \"/datasets/brighton-beach/odm_georeferencing/odm_georeferenced_model.laz\" > \"/datasets/brighton-beach/odm_georeferencing/odm_georeferenced_model.summary.json\"",
+                    "type": "info"
+                },
+                {
+                    "message": "running ogr2ogr -overwrite -f GPKG -a_srs \"+proj=utm +zone=15 +datum=WGS84 +units=m +no_defs\" /datasets/brighton-beach/odm_georeferencing/odm_georeferenced_model.bounds.gpkg /datasets/brighton-beach/odm_georeferencing/odm_georeferenced_model.bounds.geojson",
+                    "type": "info"
+                },
+                {
+                    "message": "Finished odm_georeferencing stage",
+                    "type": "info"
+                }
+            ]
+        },
+        {
+            "name": "odm_dem",
+            "startTime": "2026-10-26T06:21:38.321267",
+            "messages": [
+                {
+                    "message": "Running odm_dem stage",
+                    "type": "info"
+                },
+                {
+                    "message": "Create DSM: True",
+                    "type": "info"
+                },
+                {
+                    "message": "Create DTM: False",
+                    "type": "info"
+                },
+                {
+                    "message": "DEM input file /datasets/brighton-beach/odm_georeferencing/odm_georeferenced_model.laz found: True",
+                    "type": "info"
+                },
+                {
+                    "message": "running renderdem \"/datasets/brighton-beach/odm_georeferencing/odm_georeferenced_model.laz\" --outdir \"/datasets/brighton-beach/odm_dem\" --output-type max --radiuses 0.09,0.12727922061357855,0.18 --resolution 0.05 --max-tiles 0 --decimation 1 --classification -1 --tile-size 4096 --force ",
+                    "type": "info"
+                },
+                {
+                    "message": "Generated 3 tiles",
+                    "type": "info"
+                },
+                {
+                    "message": "running gdalbuildvrt -input_file_list \"/datasets/brighton-beach/odm_dem/tiles_list.txt\" \"/datasets/brighton-beach/odm_dem/tiles.vrt\" ",
+                    "type": "info"
+                },
+                {
+                    "message": "running gdal_translate -co NUM_THREADS=4 -co BIGTIFF=IF_SAFER -co COMPRESS=DEFLATE --config GDAL_CACHEMAX 40.45% -outsize 10% 0 \"/datasets/brighton-beach/odm_dem/tiles.vrt\" \"/datasets/brighton-beach/odm_dem/tiles.small.tif\"",
+                    "type": "info"
+                },
+                {
+                    "message": "running gdalbuildvrt -resolution highest -r bilinear \"/datasets/brighton-beach/odm_dem/merged.vrt\" \"/datasets/brighton-beach/odm_dem/tiles.small_filled.tif\" \"/datasets/brighton-beach/odm_dem/tiles.vrt\"",
+                    "type": "info"
+                },
+                {
+                    "message": "running gdal_translate -co NUM_THREADS=4 -co TILED=YES -co BIGTIFF=IF_SAFER -co COMPRESS=DEFLATE --config GDAL_CACHEMAX 40.45% \"/datasets/brighton-beach/odm_dem/merged.vrt\" \"/datasets/brighton-beach/odm_dem/tiles.tif\"",
+                    "type": "info"
+                },
+                {
+                    "message": "running fastrasterfilter \"/datasets/brighton-beach/odm_dem/tiles.tif\" --output \"/datasets/brighton-beach/odm_dem/dsm.tif\" --window-size 512 --radius 4 --co TILED=YES --co BIGTIFF=IF_SAFER --co COMPRESS=DEFLATE ",
+                    "type": "info"
+                },
+                {
+                    "message": "Completed smoothing to create /datasets/brighton-beach/odm_dem/dsm.tif in 0:00:00.742252",
+                    "type": "info"
+                },
+                {
+                    "message": "Completed dsm.tif in 0:00:09.488923",
+                    "type": "info"
+                },
+                {
+                    "message": "Cropping /datasets/brighton-beach/odm_dem/dsm.tif",
+                    "type": "info"
+                },
+                {
+                    "message": "running gdalwarp -cutline /datasets/brighton-beach/odm_georeferencing/odm_georeferenced_model.bounds.gpkg -crop_to_cutline -co TILED=YES -co COMPRESS=DEFLATE -co BLOCKXSIZE=512 -co BLOCKYSIZE=512 -co BIGTIFF=IF_SAFER -co NUM_THREADS=4  /datasets/brighton-beach/odm_dem/dsm.original.tif /datasets/brighton-beach/odm_dem/dsm.tif --config GDAL_CACHEMAX 40.45%",
+                    "type": "info"
+                },
+                {
+                    "message": "Adding TIFFTAGs to /datasets/brighton-beach/odm_dem/dsm.tif",
+                    "type": "info"
+                },
+                {
+                    "message": "Finished odm_dem stage",
+                    "type": "info"
+                }
+            ]
+        },
+        {
+            "name": "odm_orthophoto",
+            "startTime": "2026-10-26T06:21:48.549652",
+            "messages": [
+                {
+                    "message": "Running odm_orthophoto stage",
+                    "type": "info"
+                },
+                {
+                    "message": "Creating GeoTIFF",
+                    "type": "info"
+                },
+                {
+                    "message": "running \"/code/SuperBuild/install/bin/odm_orthophoto\" -inputFiles /datasets/brighton-beach/odm_texturing_25d/odm_textured_model_geo.obj -logFile \"/datasets/brighton-beach/odm_orthophoto/odm_orthophoto_log.txt\" -outputFile \"/datasets/brighton-beach/odm_orthophoto/odm_orthophoto.tif\" -resolution 10.0 -verbose -outputCornerFile \"/datasets/brighton-beach/odm_orthophoto/odm_orthophoto_corners.txt\"   -inpaintThreshold 1.0 -utm_north_offset 5188170.0 -utm_east_offset 576705.0 -a_srs \"+proj=utm +zone=15 +datum=WGS84 +units=m +no_defs +type=crs\" -co TILED=YES -co COMPRESS=DEFLATE -co PREDICTOR=2 -co BIGTIFF=IF_SAFER -co BLOCKXSIZE=512 -co BLOCKYSIZE=512 -co NUM_THREADS=4 --config GDAL_CACHEMAX 3299497984.0 ",
+                    "type": "info"
+                },
+                {
+                    "message": "Cropping /datasets/brighton-beach/odm_orthophoto/odm_orthophoto.tif",
+                    "type": "info"
+                },
+                {
+                    "message": "running gdalwarp -cutline /datasets/brighton-beach/odm_georeferencing/odm_georeferenced_model.bounds.gpkg -crop_to_cutline -co TILED=YES -co COMPRESS=DEFLATE -co PREDICTOR=2 -co BIGTIFF=IF_SAFER -co BLOCKXSIZE=512 -co BLOCKYSIZE=512 -co NUM_THREADS=4 -dstalpha /datasets/brighton-beach/odm_orthophoto/odm_orthophoto.original.tif /datasets/brighton-beach/odm_orthophoto/odm_orthophoto.tif --config GDAL_CACHEMAX 40.4%",
+                    "type": "info"
+                },
+                {
+                    "message": "Adding TIFFTAGs to /datasets/brighton-beach/odm_orthophoto/odm_orthophoto.tif",
+                    "type": "info"
+                },
+                {
+                    "message": "Wrote /datasets/brighton-beach/odm_orthophoto/odm_orthophoto_extent.dxf",
+                    "type": "info"
+                },
+                {
+                    "message": "Wrote /datasets/brighton-beach/odm_orthophoto/odm_orthophoto.tfw",
+                    "type": "info"
+                },
+                {
+                    "message": "Finished odm_orthophoto stage",
+                    "type": "info"
+                }
+            ]
+        },
+        {
+            "name": "odm_report",
+            "startTime": "2026-10-26T06:21:52.809046",
+            "messages": [
+                {
+                    "message": "Running odm_report stage",
+                    "type": "info"
+                },
+                {
+                    "message": "Exporting shots.geojson",
+                    "type": "info"
+                },
+                {
+                    "message": "Wrote /datasets/brighton-beach/odm_report/shots.geojson",
+                    "type": "info"
+                },
+                {
+                    "message": "Copied /datasets/brighton-beach/opensfm/camera_mappings.npz --> /datasets/brighton-beach/odm_report/camera_mappings.npz",
+                    "type": "info"
+                },
+                {
+                    "message": "running pdal info --dimensions \"X,Y,Z\" \"/datasets/brighton-beach/odm_georeferencing/odm_georeferenced_model.laz\" > \"/datasets/brighton-beach/odm_georeferencing/odm_georeferenced_model.info.json\"",
+                    "type": "info"
+                },
+                {
+                    "message": "running pdal translate -i \"/datasets/brighton-beach/odm_georeferencing/odm_georeferenced_model.laz\" -o \"/datasets/brighton-beach/opensfm/stats/overlap.tif\" --writer gdal --writers.gdal.resolution=0.09548142857142791 --writers.gdal.data_type=uint8_t --writers.gdal.dimension=UserData --writers.gdal.output_type=max --writers.gdal.radius=0.1350311312404713 ",
+                    "type": "info"
+                },
+                {
+                    "message": "Cropping /datasets/brighton-beach/opensfm/stats/overlap.tif",
+                    "type": "info"
+                },
+                {
+                    "message": "running gdalwarp -cutline /datasets/brighton-beach/odm_georeferencing/odm_georeferenced_model.bounds.gpkg -crop_to_cutline -co TILED=YES -co COMPRESS=DEFLATE -co PREDICTOR=2 -co BIGTIFF=IF_SAFER -co BLOCKXSIZE=512 -co BLOCKYSIZE=512 -co NUM_THREADS=4  /datasets/brighton-beach/opensfm/stats/overlap.original.tif /datasets/brighton-beach/opensfm/stats/overlap.tif --config GDAL_CACHEMAX 40.45%",
+                    "type": "info"
+                },
+                {
+                    "message": "running gdaldem color-relief \"/datasets/brighton-beach/opensfm/stats/overlap.tif\" \"/code/opendm/report/overlap_color_map.txt\" \"/datasets/brighton-beach/opensfm/stats/overlap.png\" -of PNG -alpha",
+                    "type": "info"
+                },
+                {
+                    "message": "running gdal_translate -of png \"/datasets/brighton-beach/odm_orthophoto/odm_orthophoto.tif\" \"/datasets/brighton-beach/opensfm/stats/ortho.png\" -b 1 -b 2 -b 3 -b 4 -outsize 1400 0 -co WORLDFILE=YES --config GDAL_CACHEMAX 40.45% ",
+                    "type": "info"
+                },
+                {
+                    "message": "running gdal_translate -outsize 1400 0 \"/datasets/brighton-beach/odm_dem/dsm.tif\" \"/datasets/brighton-beach/odm_dem/dsm.preview.tif\" --config GDAL_CACHEMAX 40.5%",
+                    "type": "info"
+                },
+                {
+                    "message": "Computing raster stats for /datasets/brighton-beach/odm_dem/dsm.preview.tif",
+                    "type": "info"
+                },
+                {
+                    "message": "running gdaldem color-relief \"/datasets/brighton-beach/odm_dem/dsm.preview.tif\" \"/code/opendm/tiles/color_relief.txt\" \"/datasets/brighton-beach/odm_dem/dsm.previewcolor.tif\" -alpha -co ALPHA=YES",
+                    "type": "info"
+                },
+                {
+                    "message": "running gdaldem hillshade \"/datasets/brighton-beach/odm_dem/dsm.preview.tif\" \"/datasets/brighton-beach/odm_dem/dsm.previewhillshade.tif\" -z 1.0 -s 1.0 -az 315.0 -alt 45.0",
+                    "type": "info"
+                },
+                {
+                    "message": "running \"/code/venv/bin/python3\" \"/code/opendm/tiles/hsv_merge.py\" \"/datasets/brighton-beach/odm_dem/dsm.previewcolor.tif\" \"/datasets/brighton-beach/odm_dem/dsm.previewhillshade.tif\" \"/datasets/brighton-beach/odm_dem/dsm.previewcolored_hillshade.tif\"",
+                    "type": "info"
+                },
+                {
+                    "message": "running gdal_translate -outsize 1400 0 -of png \"/datasets/brighton-beach/odm_dem/dsm.previewcolored_hillshade.tif\" \"/datasets/brighton-beach/opensfm/stats/dsm.png\" --config GDAL_CACHEMAX 40.5%",
+                    "type": "info"
+                },
+                {
+                    "message": "Exporting report to /datasets/brighton-beach/odm_report/report.pdf",
+                    "type": "info"
+                },
+                {
+                    "message": "Finished odm_report stage",
+                    "type": "info"
+                }
+            ]
+        },
+        {
+            "name": "odm_postprocess",
+            "startTime": "2026-10-26T06:22:06.094043",
+            "messages": [
+                {
+                    "message": "Running odm_postprocess stage",
+                    "type": "info"
+                },
+                {
+                    "message": "Post Processing",
+                    "type": "info"
+                },
+                {
+                    "message": "Finished odm_postprocess stage",
+                    "type": "info"
+                },
+                {
+                    "message": "No more stages to run",
+                    "type": "info"
+                }
+            ],
+            "endTime": "2026-10-26T06:22:06.095793",
+            "totalTime": 0.0
+        }
+    ],
+    "processes": [
+        {
+            "command": "\"/code/SuperBuild/install/bin/opensfm/bin/opensfm\" detect_features \"/datasets/brighton-beach/opensfm\"",
+            "exitCode": 0,
+            "output": [
+                "2026-10-26 06:17:53,557 DEBUG: Found 2400 points in 1.1431033611297607s",
+                "2026-10-26 06:17:53,722 INFO: Extracting ROOT_DSPSIFT features for image DJI_0034.JPG",
+                "2026-10-26 06:17:53,809 DEBUG: Found 2087 points in 1.1165802478790283s",
+                "2026-10-26 06:17:53,936 INFO: Extracting ROOT_DSPSIFT features for image DJI_0026.JPG",
+                "2026-10-26 06:17:54,022 DEBUG: Found 2130 points in 1.1219522953033447s",
+                "2026-10-26 06:17:54,179 INFO: Extracting ROOT_DSPSIFT features for image DJI_0035.JPG",
+                "2026-10-26 06:17:54,686 DEBUG: Found 2204 points in 1.1154351234436035s",
+                "2026-10-26 06:17:54,767 DEBUG: Found 2099 points in 1.0176033973693848s",
+                "2026-10-26 06:17:55,017 DEBUG: Found 2203 points in 1.0502688884735107s",
+                "2026-10-26 06:17:55,105 DEBUG: Found 1953 points in 0.8952679634094238s"
+            ]
+        },
+        {
+            "command": "\"/code/SuperBuild/install/bin/opensfm/bin/opensfm\" match_features \"/datasets/brighton-beach/opensfm\"",
+            "exitCode": 0,
+            "output": [
+                "2026-10-26 06:17:57,877 DEBUG: Matching DJI_0026.JPG and DJI_0032.JPG.  Matcher: FLANN (symmetric) T-desc: 0.031 T-robust: 0.001 T-total: 0.033 Matches: 270 Robust: 259 Success: True",
+                "2026-10-26 06:17:57,880 DEBUG: Matching DJI_0023.JPG and DJI_0020.JPG.  Matcher: FLANN (symmetric) T-desc: 0.036 Matches: FAILED",
+                "2026-10-26 06:17:57,896 DEBUG: Matching DJI_0033.JPG and DJI_0035.JPG.  Matcher: FLANN (symmetric) T-desc: 0.029 T-robust: 0.001 T-total: 0.029 Matches: 129 Robust: 124 Success: True",
+                "2026-10-26 06:17:57,911 DEBUG: Matching DJI_0018.JPG and DJI_0019.JPG.  Matcher: FLANN (symmetric) T-desc: 0.033 T-robust: 0.001 T-total: 0.034 Matches: 142 Robust: 135 Success: True",
+                "2026-10-26 06:17:57,914 DEBUG: Matching DJI_0025.JPG and DJI_0020.JPG.  Matcher: FLANN (symmetric) T-desc: 0.033 T-robust: 0.001 T-total: 0.033 Matches: 40 Robust: 37 Success: True",
+                "2026-10-26 06:17:57,915 DEBUG: Matching DJI_0021.JPG and DJI_0020.JPG.  Matcher: FLANN (symmetric) T-desc: 0.036 T-robust: 0.001 T-total: 0.037 Matches: 136 Robust: 125 Success: True",
+                "2026-10-26 06:17:57,924 DEBUG: Matching DJI_0029.JPG and DJI_0031.JPG.  Matcher: FLANN (symmetric) T-desc: 0.028 T-robust: 0.000 T-total: 0.028 Matches: 115 Robust: 107 Success: True",
+                "2026-10-26 06:17:57,938 DEBUG: Matching DJI_0023.JPG and DJI_0025.JPG.  Matcher: FLANN (symmetric) T-desc: 0.027 T-robust: 0.000 T-total: 0.027 Matches: 70 Robust: 66 Success: True",
+                "2026-10-26 06:17:57,942 DEBUG: Matching DJI_0026.JPG and DJI_0020.JPG.  Matcher: FLANN (symmetric) T-desc: 0.026 T-robust: 0.000 T-total: 0.027 Matches: 75 Robust: 73 Success: True",
+                "2026-10-26 06:17:57,949 INFO: Matched 107 pairs (brown-brown: 107) in 1.1685109550001016 seconds (0.010920669934580686 seconds/pair)."
+            ]
+        },
+        {
+            "command": "\"/code/SuperBuild/install/bin/opensfm/bin/opensfm\" create_tracks \"/datasets/brighton-beach/opensfm\"",
+            "exitCode": 0,
+            "output": [
+                "2026-10-26 06:17:59,537 INFO: reading features",
+                "2026-10-26 06:18:00,194 DEBUG: Merging features onto tracks",
+                "2026-10-26 06:18:00,221 DEBUG: Good tracks: 3371"
+            ]
+        },
+        {
+            "command": "\"/code/SuperBuild/install/bin/opensfm/bin/opensfm\" reconstruct \"/datasets/brighton-beach/opensfm\"",
+            "exitCode": 0,
+            "output": [
+                "2026-10-26 06:18:04,535 INFO: Adding DJI_0022.JPG to the reconstruction",
+                "2026-10-26 06:18:04,538 INFO: -------------------------------------------------------",
+                "2026-10-26 06:18:04,561 INFO: DJI_0023.JPG resection inliers: 135 / 141",
+                "2026-10-26 06:18:04,593 INFO: Adding DJI_0023.JPG to the reconstruction",
+                "2026-10-26 06:18:04,598 INFO: -------------------------------------------------------",
+                "2026-10-26 06:18:04,599 INFO: Shots and/or GCPs are well-conditioned. Using naive 3D-3D alignment.",
+                "2026-10-26 06:18:04,700 DEBUG: Ceres Solver Report: Iterations: 8, Initial cost: 1.008041e+02, Final cost: 7.797186e+01, Termination: CONVERGENCE",
+                "2026-10-26 06:18:04,718 INFO: Removed outliers: 25",
+                "2026-10-26 06:18:04,730 INFO: Reconstruction 0: 18 images, 3277 points",
+                "2026-10-26 06:18:04,731 INFO: 1 partial reconstructions in total."
+            ]
+        },
+        {
+            "command": "\"/code/SuperBuild/install/bin/opensfm/bin/opensfm\" compute_statistics --diagram_max_points 100000 \"/datasets/brighton-beach/opensfm\"",
+            "exitCode": 0,
+            "output": [
+                "2026-10-26 06:18:08,294 DEBUG: Loaded backend agg version v2.2.",
+                "2026-10-26 06:18:08,308 DEBUG: locator: <matplotlib.ticker.AutoLocator object at 0x77912585b410>",
+                "2026-10-26 06:18:08,708 DEBUG: locator: <matplotlib.ticker.AutoLocator object at 0x779120c164b0>"
+            ]
+        },
+        {
+            "command": "\"/code/SuperBuild/install/bin/opensfm/bin/opensfm\" export_geocoords --reconstruction --proj \"+proj=utm +zone=15 +datum=WGS84 +units=m +no_defs +type=crs\" --offset-x 576705.0 --offset-y 5188170.0 \"/datasets/brighton-beach/opensfm\"",
+            "exitCode": 0
+        },
+        {
+            "command": "\"/code/SuperBuild/install/bin/opensfm/bin/opensfm\" export_visualsfm --points \"/datasets/brighton-beach/opensfm\"",
+            "exitCode": 0
+        },
+        {
+            "command": "\"/code/SuperBuild/install/bin/opensfm/bin/opensfm\" export_openmvs \"/datasets/brighton-beach/opensfm\"",
+            "exitCode": 0
+        },
+        {
+            "command": "\"/code/SuperBuild/install/bin/DensifyPointCloud\" \"/datasets/brighton-beach/opensfm/undistorted/openmvs/scene.mvs\" --resolution-level 2 --dense-config-file \"/datasets/brighton-beach/opensfm/undistorted/openmvs/Densify.ini\" --max-resolution 1000 --min-resolution 320 --max-threads 4 --number-views-fuse 2 --sub-resolution-levels 2 --archive-type 3 -w \"/datasets/brighton-beach/opensfm/undistorted/openmvs/depthmaps\" -v 0 --cuda-device -2",
+            "exitCode": 0,
+            "output": [
+                "Filtered depth-maps 18 (100%, 1s781ms)",
+                "",
+                "Fused depth-maps 3 (16.67%, 102ms, ETA 513ms)...",
+                "Fused depth-maps 16 (88.89%, 205ms, ETA 25ms)...",
+                "Fused depth-maps 18 (100%, 207ms)",
+                "06:18:46 [App     ] Densifying point-cloud completed: 378538 points (26s750ms)",
+                "06:18:47 [App     ] MEMORYINFO: {",
+                "06:18:47 [App     ] \tVmPeak:\t 1818372 kB",
+                "06:18:47 [App     ] \tVmSize:\t 1818372 kB",
+                "06:18:47 [App     ] } ENDINFO"
+            ]
+        },
+        {
+            "command": "\"/code/SuperBuild/install/bin/DensifyPointCloud\" --filter-point-cloud -20 -i \"/datasets/brighton-beach/opensfm/undistorted/openmvs/scene_dense.mvs\" -v 0 --cuda-device -2",
+            "exitCode": 0,
+            "output": [
+                "Point visibility checks 295743 (78.13%, 1s, ETA 279ms)...",
+                "Point visibility checks 318353 (84.10%, 1s, ETA 207ms)...",
+                "Point visibility checks 339370 (89.65%, 1s, ETA 138ms)...",
+                "Point visibility checks 361106 (95.39%, 1s, ETA 62ms)...",
+                "Point visibility checks 378054 (99.87%, 1s, ETA 1ms)...",
+                "Point visibility checks 378538 (100%, 1s404ms)",
+                "06:18:52 [App     ] MEMORYINFO: {",
+                "06:18:52 [App     ] \tVmPeak:\t  729036 kB",
+                "06:18:52 [App     ] \tVmSize:\t  709848 kB",
+                "06:18:52 [App     ] } ENDINFO"
+            ]
+        },
+        {
+            "command": "\"/code/SuperBuild/install/bin/FPCFilter\" --input \"/datasets/brighton-beach/opensfm/undistorted/openmvs/scene_dense_dense_filtered.ply\" --output \"/datasets/brighton-beach/odm_filterpoints/point_cloud.ply\" --concurrency 4 --meank 16 --std 5 --stats \"/datasets/brighton-beach/odm_filterpoints/point_cloud_stats.json\"",
+            "exitCode": 0,
+            "output": [
+                "-> Spacing estimation completed (0.09 meters)",
+                "",
+                "?> Done in 0.9557s",
+                "",
+                "-> Writing output",
+                "",
+                "?> Done in 0.7281s",
+                "",
+                "?> Pipeline done in 1.684s",
+                ""
+            ]
+        },
+        {
+            "command": "\"/code/SuperBuild/install/bin/PoissonRecon\" --in \"/datasets/brighton-beach/odm_filterpoints/point_cloud.ply\" --out \"/datasets/brighton-beach/odm_meshing/odm_mesh.dirty.ply\" --depth 11 --pointWeight 4.0 --samplesPerNode 1.0 --threads 3 --bType 2 --linearFit ",
+            "exitCode": 0
+        },
+        {
+            "command": "\"/code/SuperBuild/install/bin/ReconstructMesh\" -i \"/datasets/brighton-beach/odm_meshing/odm_mesh.dirty.ply\" -o \"/datasets/brighton-beach/odm_meshing/odm_mesh.ply\" --archive-type 3 --remove-spikes 0 --remove-spurious 20 --smooth 0 --target-face-num 400000 -v 0",
+            "exitCode": 0,
+            "output": [
+                "Decimated faces 2470495 (97.21%, 17s, ETA 504ms)...",
+                "Decimated faces 2479363 (97.56%, 17s, ETA 445ms)...",
+                "Decimated faces 2497653 (98.28%, 17s, ETA 313ms)...",
+                "Decimated faces 2515379 (98.98%, 18s, ETA 185ms)...",
+                "Decimated faces 2532629 (99.66%, 18s, ETA 62ms)...",
+                "Decimated faces 2541327 (100%, 18s170ms)",
+                "06:20:46 [App     ] MEMORYINFO: {",
+                "06:20:46 [App     ] \tVmPeak:\t 1485580 kB",
+                "06:20:46 [App     ] \tVmSize:\t  536488 kB",
+                "06:20:46 [App     ] } ENDINFO"
+            ]
+        },
+        {
+            "command": "renderdem \"/datasets/brighton-beach/odm_filterpoints/point_cloud.ply\" --outdir \"/datasets/brighton-beach/odm_meshing/tmp\" --output-type max --radiuses 0.1413716694115407,0.19992973221712648,0.2827433388230814 --resolution 0.09 --max-tiles 0 --decimation 1 --classification -1 --tile-size 4096 --force ",
+            "exitCode": 0,
+            "output": [
+                "Reading 376340 points",
+                "Point cloud bounds are [minx: -60.9575386047, maxx: 72.7163391113, miny: -64.9428939819, maxy: 66.1738815308]",
+                "DEM resolution is (1486, 1457), max tile size is 4096, will split DEM generation into 1 tiles",
+                "r0.141372_x0_y0.tif",
+                "r0.19993_x0_y0.tif",
+                "r0.282743_x0_y0.tif"
+            ]
+        },
+        {
+            "command": "gdalbuildvrt -input_file_list \"/datasets/brighton-beach/odm_meshing/tmp/tiles_list.txt\" \"/datasets/brighton-beach/odm_meshing/tmp/tiles.vrt\" ",
+            "exitCode": 0,
+            "output": [
+                "0...10...20...30...40...50...60...70...80...90...100 - done."
+            ]
+        },
+        {
+            "command": "gdal_translate -co NUM_THREADS=4 -co BIGTIFF=IF_SAFER -co COMPRESS=DEFLATE --config GDAL_CACHEMAX 40.4% -outsize 10% 0 \"/datasets/brighton-beach/odm_meshing/tmp/tiles.vrt\" \"/datasets/brighton-beach/odm_meshing/tmp/tiles.small.tif\"",
+            "exitCode": 0,
+            "output": [
+                "Input file size is 1486, 1457",
+                "0...10...20...30...40...50...60...70...80...90...100 - done."
+            ]
+        },
+        {
+            "command": "gdalbuildvrt -resolution highest -r bilinear \"/datasets/brighton-beach/odm_meshing/tmp/merged.vrt\" \"/datasets/brighton-beach/odm_meshing/tmp/tiles.small_filled.tif\" \"/datasets/brighton-beach/odm_meshing/tmp/tiles.vrt\"",
+            "exitCode": 0,
+            "output": [
+                "0...10...20...30...40...50...60...70...80...90...100 - done."
+            ]
+        },
+        {
+            "command": "gdal_translate -co NUM_THREADS=4 -co TILED=YES -co BIGTIFF=IF_SAFER -co COMPRESS=DEFLATE --config GDAL_CACHEMAX 40.4% \"/datasets/brighton-beach/odm_meshing/tmp/merged.vrt\" \"/datasets/brighton-beach/odm_meshing/tmp/tiles.tif\"",
+            "exitCode": 0,
+            "output": [
+                "Input file size is 1486, 1457",
+                "0...10...20...30...40...50...60...70...80...90...100 - done."
+            ]
+        },
+        {
+            "command": "fastrasterfilter \"/datasets/brighton-beach/odm_meshing/tmp/tiles.tif\" --output \"/datasets/brighton-beach/odm_meshing/tmp/mesh_dsm.tif\" --window-size 512 --radius 4 --co TILED=YES --co BIGTIFF=IF_SAFER --co COMPRESS=DEFLATE ",
+            "exitCode": 0,
+            "output": [
+                "Input: /datasets/brighton-beach/odm_meshing/tmp/tiles.tif",
+                "Size: 1486x1457",
+                "Blocks: 4",
+                "Smoothing...4... done",
+                "Wrote /datasets/brighton-beach/odm_meshing/tmp/mesh_dsm.tif"
+            ]
+        },
+        {
+            "command": "\"/code/SuperBuild/install/bin/dem2mesh\" -inputFile \"/datasets/brighton-beach/odm_meshing/tmp/mesh_dsm.tif\" -outputFile \"/datasets/brighton-beach/odm_meshing/odm_25dmesh.dirty.ply\" -maxTileLength 2000 -maxVertexCount 200000 -maxConcurrency 4 -edgeSwapThreshold 0.15 -verbose ",
+            "exitCode": 0,
+            "output": [
+                "Concurrency set to 4",
+                "Allocating 1 raster data blocks of 5948 bytes",
+                "Scanning block (0,0)",
+                "Empty blocks: 0",
+                "Processing block (0,0)",
+                "Sampled 4324320 faces, target is 400000",
+                "Triangle count: 400000",
+                "Single block, saving to PLY",
+                "Performing edge collapses...",
+                "Writing to file...  done!"
+            ]
+        },
+        {
+            "command": "\"/code/SuperBuild/install/bin/ReconstructMesh\" -i \"/datasets/brighton-beach/odm_meshing/odm_25dmesh.dirty.ply\" -o \"/datasets/brighton-beach/odm_meshing/odm_25dmesh.ply\" --archive-type 3 --remove-spikes 0 --remove-spurious 0 --smooth 0 --target-face-num 400000 -v 0",
+            "exitCode": 0,
+            "output": [
+                "06:21:04 [App     ] CPU: 13th Gen Intel(R) Core(TM) i5-13450HX (16 cores)",
+                "06:21:04 [App     ] RAM: 7.60GB Physical Memory 2.00GB Virtual Memory",
+                "06:21:04 [App     ] OS: Linux 6.6.87.2-microsoft-standard-WSL2 (x86_64)",
+                "06:21:04 [App     ] Disk:",
+                "06:21:04 [App     ] SSE & AVX compatible CPU & OS detected",
+                "06:21:04 [App     ] Command line: ReconstructMesh -i /datasets/brighton-beach/odm_meshing/odm_25dmesh.dirty.ply -o /datasets/brighton-beach/odm_meshing/odm_25dmesh.ply --archive-type 3 --remove-spikes 0 --remove-spurious 0 --smooth 0 --target-face-num 400000 -v 0",
+                "06:21:06 [App     ] MEMORYINFO: {",
+                "06:21:06 [App     ] \tVmPeak:\t  179476 kB",
+                "06:21:06 [App     ] \tVmSize:\t   98320 kB",
+                "06:21:06 [App     ] } ENDINFO"
+            ]
+        },
+        {
+            "command": "\"/code/SuperBuild/install/bin/texrecon\" \"/datasets/brighton-beach/opensfm/undistorted/reconstruction.nvm\" \"/datasets/brighton-beach/odm_meshing/odm_mesh.ply\" \"/datasets/brighton-beach/odm_texturing/odm_textured_model_geo\" -d gmi -o gauss_clamping -t none --no_intermediate_results     --num_threads=4 --max_texture_size=8192 ",
+            "exitCode": 0,
+            "output": [
+                "",
+                "Blending texture patches 100%... done. (Took 1.056s)",
+                "Generating texture atlases:",
+                "Sorting texture patches... done.",
+                "",
+                "Working on atlas 2 100%... done.",
+                "Finalizing texture atlases... done. (Took: 0s)",
+                "Building objmodel:",
+                "Saving model... done.",
+                "Whole texturing procedure took: 17.061s"
+            ]
+        },
+        {
+            "command": "\"/code/SuperBuild/install/bin/texrecon\" \"/datasets/brighton-beach/opensfm/undistorted/reconstruction.nvm\" \"/datasets/brighton-beach/odm_meshing/odm_25dmesh.ply\" \"/datasets/brighton-beach/odm_texturing_25d/odm_textured_model_geo\" -d gmi -o gauss_clamping -t none --no_intermediate_results   --nadir_mode  --num_threads=4 --max_texture_size=8192 ",
+            "exitCode": 0,
+            "output": [
+                "",
+                "Blending texture patches 100%... done. (Took 0.72s)",
+                "Generating texture atlases:",
+                "Sorting texture patches... done.",
+                "",
+                "Working on atlas 1 100%... done.",
+                "Finalizing texture atlases... done. (Took: 0s)",
+                "Building objmodel:",
+                "Saving model... done.",
+                "Whole texturing procedure took: 13.474s"
+            ]
+        },
+        {
+            "command": "pdal translate -i \"/datasets/brighton-beach/odm_filterpoints/point_cloud.ply\" -o \"/datasets/brighton-beach/odm_georeferencing/odm_georeferenced_model.laz\" ferry transformation --filters.ferry.dimensions=\"views => UserData\" --filters.transformation.matrix=\"1 0 0 576705.0 0 1 0 5188170.0 0 0 1 0 0 0 0 1\" --writers.las.offset_x=576705.0 --writers.las.offset_y=5188170.0 --writers.las.scale_x=0.001 --writers.las.scale_y=0.001 --writers.las.scale_z=0.001 --writers.las.offset_z=0 --writers.las.a_srs=\"+proj=utm +zone=15 +datum=WGS84 +units=m +no_defs +type=crs\"",
+            "exitCode": 0
+        },
+        {
+            "command": "pdal translate -i \"/datasets/brighton-beach/odm_georeferencing/odm_georeferenced_model.laz\" -o \"/datasets/brighton-beach/odm_georeferencing/odm_georeferenced_model.decimated.las\" decimation --filters.decimation.step=40 ",
+            "exitCode": 0
+        },
+        {
+            "command": "pdal info --boundary --filters.hexbin.edge_length=1 --filters.hexbin.threshold=1 \"/datasets/brighton-beach/odm_georeferencing/odm_georeferenced_model.decimated.las\" > \"/datasets/brighton-beach/odm_georeferencing/odm_georeferenced_model.boundary.json\"",
+            "exitCode": 0
+        },
+        {
+            "command": "pdal info --summary \"/datasets/brighton-beach/odm_georeferencing/odm_georeferenced_model.laz\" > \"/datasets/brighton-beach/odm_georeferencing/odm_georeferenced_model.summary.json\"",
+            "exitCode": 0
+        },
+        {
+            "command": "ogr2ogr -overwrite -f GPKG -a_srs \"+proj=utm +zone=15 +datum=WGS84 +units=m +no_defs\" /datasets/brighton-beach/odm_georeferencing/odm_georeferenced_model.bounds.gpkg /datasets/brighton-beach/odm_georeferencing/odm_georeferenced_model.bounds.geojson",
+            "exitCode": 0
+        },
+        {
+            "command": "renderdem \"/datasets/brighton-beach/odm_georeferencing/odm_georeferenced_model.laz\" --outdir \"/datasets/brighton-beach/odm_dem\" --output-type max --radiuses 0.09,0.12727922061357855,0.18 --resolution 0.05 --max-tiles 0 --decimation 1 --classification -1 --tile-size 4096 --force ",
+            "exitCode": 0,
+            "output": [
+                "Reading points from /datasets/brighton-beach/odm_georeferencing/odm_georeferenced_model.laz",
+                "Number of points: 376340",
+                "Classification dimension: Classification",
+                "Point cloud bounds are [minx: 576644.042, maxx: 576777.716, miny: 5188105.057, maxy: 5188236.174]",
+                "DEM resolution is (2674, 2623), max tile size is 4096, will split DEM generation into 1 tiles",
+                "r0.09_x0_y0.tif",
+                "r0.127279_x0_y0.tif",
+                "r0.18_x0_y0.tif"
+            ]
+        },
+        {
+            "command": "gdalbuildvrt -input_file_list \"/datasets/brighton-beach/odm_dem/tiles_list.txt\" \"/datasets/brighton-beach/odm_dem/tiles.vrt\" ",
+            "exitCode": 0,
+            "output": [
+                "0...10...20...30...40...50...60...70...80...90...100 - done."
+            ]
+        },
+        {
+            "command": "gdal_translate -co NUM_THREADS=4 -co BIGTIFF=IF_SAFER -co COMPRESS=DEFLATE --config GDAL_CACHEMAX 40.45% -outsize 10% 0 \"/datasets/brighton-beach/odm_dem/tiles.vrt\" \"/datasets/brighton-beach/odm_dem/tiles.small.tif\"",
+            "exitCode": 0,
+            "output": [
+                "Input file size is 2674, 2623",
+                "0...10...20...30...40...50...60...70...80...90...100 - done."
+            ]
+        },
+        {
+            "command": "gdalbuildvrt -resolution highest -r bilinear \"/datasets/brighton-beach/odm_dem/merged.vrt\" \"/datasets/brighton-beach/odm_dem/tiles.small_filled.tif\" \"/datasets/brighton-beach/odm_dem/tiles.vrt\"",
+            "exitCode": 0,
+            "output": [
+                "0...10...20...30...40...50...60...70...80...90...100 - done."
+            ]
+        },
+        {
+            "command": "gdal_translate -co NUM_THREADS=4 -co TILED=YES -co BIGTIFF=IF_SAFER -co COMPRESS=DEFLATE --config GDAL_CACHEMAX 40.45% \"/datasets/brighton-beach/odm_dem/merged.vrt\" \"/datasets/brighton-beach/odm_dem/tiles.tif\"",
+            "exitCode": 0,
+            "output": [
+                "Input file size is 2674, 2623",
+                "0...10...20...30...40...50...60...70...80...90...100 - done in 00:00:06."
+            ]
+        },
+        {
+            "command": "fastrasterfilter \"/datasets/brighton-beach/odm_dem/tiles.tif\" --output \"/datasets/brighton-beach/odm_dem/dsm.tif\" --window-size 512 --radius 4 --co TILED=YES --co BIGTIFF=IF_SAFER --co COMPRESS=DEFLATE ",
+            "exitCode": 0,
+            "output": [
+                "Input: /datasets/brighton-beach/odm_dem/tiles.tif",
+                "Size: 2674x2623",
+                "Blocks: 25",
+                "Smoothing...25... done",
+                "Wrote /datasets/brighton-beach/odm_dem/dsm.tif"
+            ]
+        },
+        {
+            "command": "gdalwarp -cutline /datasets/brighton-beach/odm_georeferencing/odm_georeferenced_model.bounds.gpkg -crop_to_cutline -co TILED=YES -co COMPRESS=DEFLATE -co BLOCKXSIZE=512 -co BLOCKYSIZE=512 -co BIGTIFF=IF_SAFER -co NUM_THREADS=4  /datasets/brighton-beach/odm_dem/dsm.original.tif /datasets/brighton-beach/odm_dem/dsm.tif --config GDAL_CACHEMAX 40.45%",
+            "exitCode": 0,
+            "output": [
+                "Creating output file that is 2549P x 2335L.",
+                "Using internal nodata values (e.g. -9999) for image /datasets/brighton-beach/odm_dem/dsm.original.tif.",
+                "Copying nodata values from source /datasets/brighton-beach/odm_dem/dsm.original.tif to destination /datasets/brighton-beach/odm_dem/dsm.tif.",
+                "Processing dsm.original.tif [1/1] : 0...10...20...30...40...50...60...70...80...90...100 - done."
+            ]
+        },
+        {
+            "command": "\"/code/SuperBuild/install/bin/odm_orthophoto\" -inputFiles /datasets/brighton-beach/odm_texturing_25d/odm_textured_model_geo.obj -logFile \"/datasets/brighton-beach/odm_orthophoto/odm_orthophoto_log.txt\" -outputFile \"/datasets/brighton-beach/odm_orthophoto/odm_orthophoto.tif\" -resolution 10.0 -verbose -outputCornerFile \"/datasets/brighton-beach/odm_orthophoto/odm_orthophoto_corners.txt\"   -inpaintThreshold 1.0 -utm_north_offset 5188170.0 -utm_east_offset 576705.0 -a_srs \"+proj=utm +zone=15 +datum=WGS84 +units=m +no_defs +type=crs\" -co TILED=YES -co COMPRESS=DEFLATE -co PREDICTOR=2 -co BIGTIFF=IF_SAFER -co BLOCKXSIZE=512 -co BLOCKYSIZE=512 -co NUM_THREADS=4 --config GDAL_CACHEMAX 3299497984.0 ",
+            "exitCode": 0,
+            "output": [
+                "Set GDAL_CACHEMAX to 3299497984",
+                "Set TILED=YES",
+                "Set COMPRESS=DEFLATE",
+                "Set PREDICTOR=2",
+                "Set BIGTIFF=IF_SAFER",
+                "Set BLOCKXSIZE=512",
+                "Set BLOCKYSIZE=512",
+                "Set NUM_THREADS=4",
+                "Writing corner coordinates to /datasets/brighton-beach/odm_orthophoto/odm_orthophoto_corners.txt",
+                "Orthophoto generation done."
+            ]
+        },
+        {
+            "command": "gdalwarp -cutline /datasets/brighton-beach/odm_georeferencing/odm_georeferenced_model.bounds.gpkg -crop_to_cutline -co TILED=YES -co COMPRESS=DEFLATE -co PREDICTOR=2 -co BIGTIFF=IF_SAFER -co BLOCKXSIZE=512 -co BLOCKYSIZE=512 -co NUM_THREADS=4 -dstalpha /datasets/brighton-beach/odm_orthophoto/odm_orthophoto.original.tif /datasets/brighton-beach/odm_orthophoto/odm_orthophoto.tif --config GDAL_CACHEMAX 40.4%",
+            "exitCode": 0,
+            "output": [
+                "Using band 4 of source image as alpha.",
+                "Creating output file that is 1275P x 1168L.",
+                "Processing odm_orthophoto.original.tif [1/1] : 0...10...20...30...40...50...60...70...80...90...100 - done."
+            ]
+        },
+        {
+            "command": "pdal info --dimensions \"X,Y,Z\" \"/datasets/brighton-beach/odm_georeferencing/odm_georeferenced_model.laz\" > \"/datasets/brighton-beach/odm_georeferencing/odm_georeferenced_model.info.json\"",
+            "exitCode": 0
+        },
+        {
+            "command": "pdal translate -i \"/datasets/brighton-beach/odm_georeferencing/odm_georeferenced_model.laz\" -o \"/datasets/brighton-beach/opensfm/stats/overlap.tif\" --writer gdal --writers.gdal.resolution=0.09548142857142791 --writers.gdal.data_type=uint8_t --writers.gdal.dimension=UserData --writers.gdal.output_type=max --writers.gdal.radius=0.1350311312404713 ",
+            "exitCode": 0
+        },
+        {
+            "command": "gdalwarp -cutline /datasets/brighton-beach/odm_georeferencing/odm_georeferenced_model.bounds.gpkg -crop_to_cutline -co TILED=YES -co COMPRESS=DEFLATE -co PREDICTOR=2 -co BIGTIFF=IF_SAFER -co BLOCKXSIZE=512 -co BLOCKYSIZE=512 -co NUM_THREADS=4  /datasets/brighton-beach/opensfm/stats/overlap.original.tif /datasets/brighton-beach/opensfm/stats/overlap.tif --config GDAL_CACHEMAX 40.45%",
+            "exitCode": 0,
+            "output": [
+                "Creating output file that is 1335P x 1222L.",
+                "Using internal nodata values (e.g. 255) for image /datasets/brighton-beach/opensfm/stats/overlap.original.tif.",
+                "Copying nodata values from source /datasets/brighton-beach/opensfm/stats/overlap.original.tif to destination /datasets/brighton-beach/opensfm/stats/overlap.tif.",
+                "Processing overlap.original.tif [1/1] : 0...10...20...30...40...50...60...70...80...90...100 - done."
+            ]
+        },
+        {
+            "command": "gdaldem color-relief \"/datasets/brighton-beach/opensfm/stats/overlap.tif\" \"/code/opendm/report/overlap_color_map.txt\" \"/datasets/brighton-beach/opensfm/stats/overlap.png\" -of PNG -alpha",
+            "exitCode": 0,
+            "output": [
+                "0...10...20...30...40...50...60...70...80...90...100 - done."
+            ]
+        },
+        {
+            "command": "gdal_translate -of png \"/datasets/brighton-beach/odm_orthophoto/odm_orthophoto.tif\" \"/datasets/brighton-beach/opensfm/stats/ortho.png\" -b 1 -b 2 -b 3 -b 4 -outsize 1400 0 -co WORLDFILE=YES --config GDAL_CACHEMAX 40.45% ",
+            "exitCode": 0,
+            "output": [
+                "Input file size is 1275, 1168",
+                "0...10...20...30...40...50...60...70...80...90...100 - done."
+            ]
+        },
+        {
+            "command": "gdal_translate -outsize 1400 0 \"/datasets/brighton-beach/odm_dem/dsm.tif\" \"/datasets/brighton-beach/odm_dem/dsm.preview.tif\" --config GDAL_CACHEMAX 40.5%",
+            "exitCode": 0,
+            "output": [
+                "Input file size is 2549, 2335",
+                "0...10...20...30...40...50...60...70...80...90...100 - done."
+            ]
+        },
+        {
+            "command": "gdaldem color-relief \"/datasets/brighton-beach/odm_dem/dsm.preview.tif\" \"/code/opendm/tiles/color_relief.txt\" \"/datasets/brighton-beach/odm_dem/dsm.previewcolor.tif\" -alpha -co ALPHA=YES",
+            "exitCode": 0,
+            "output": [
+                "0...10...20...30...40...50...60...70...80...90...100 - done."
+            ]
+        },
+        {
+            "command": "gdaldem hillshade \"/datasets/brighton-beach/odm_dem/dsm.preview.tif\" \"/datasets/brighton-beach/odm_dem/dsm.previewhillshade.tif\" -z 1.0 -s 1.0 -az 315.0 -alt 45.0",
+            "exitCode": 0,
+            "output": [
+                "0...10...20...30...40...50...60...70...80...90...100 - done."
+            ]
+        },
+        {
+            "command": "\"/code/venv/bin/python3\" \"/code/opendm/tiles/hsv_merge.py\" \"/datasets/brighton-beach/odm_dem/dsm.previewcolor.tif\" \"/datasets/brighton-beach/odm_dem/dsm.previewhillshade.tif\" \"/datasets/brighton-beach/odm_dem/dsm.previewcolored_hillshade.tif\"",
+            "exitCode": 0,
+            "output": [
+                "/code/venv/lib/python3.12/site-packages/osgeo/gdal.py:330: FutureWarning: Neither gdal.UseExceptions() nor gdal.DontUseExceptions() has been explicitly called. In GDAL 4.0, exceptions will be enabled by default.",
+                "warnings.warn(",
+                "0...10...20...30...40...50...60...70...80...90...100 - done."
+            ]
+        },
+        {
+            "command": "gdal_translate -outsize 1400 0 -of png \"/datasets/brighton-beach/odm_dem/dsm.previewcolored_hillshade.tif\" \"/datasets/brighton-beach/opensfm/stats/dsm.png\" --config GDAL_CACHEMAX 40.5%",
+            "exitCode": 0,
+            "output": [
+                "Input file size is 1400, 1282",
+                "0...10...20...30...40...50...60...70...80...90...100 - done."
+            ]
+        }
+    ],
+    "success": true,
+    "endTime": "2026-10-26T06:22:06.095793",
+    "totalTime": 265.67
+}

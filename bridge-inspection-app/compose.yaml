@@ -1,0 +1,19 @@
+services:
+  bridge-app:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8770:3000"
+    environment:
+      HOST: 0.0.0.0
+      PORT: 3000
+      DEMO_MODE: "false"
+      COOKIE_SECURE: "true"
+      PUBLIC_ORIGIN: ${PUBLIC_ORIGIN:?Set PUBLIC_ORIGIN}
+      ADMIN_EMAIL: ${ADMIN_EMAIL:?Set ADMIN_EMAIL}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:?Set ADMIN_PASSWORD}
+      INSPECTOR_EMAIL: ${INSPECTOR_EMAIL:?Set INSPECTOR_EMAIL}
+      INSPECTOR_PASSWORD: ${INSPECTOR_PASSWORD:?Set INSPECTOR_PASSWORD}
+      WEBODM_URL: ${WEBODM_URL:?Set WEBODM_URL}
+    volumes:
+      - ./storage:/app/storage

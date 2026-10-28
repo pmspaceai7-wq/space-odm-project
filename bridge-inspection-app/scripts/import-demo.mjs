@@ -1,0 +1,12 @@
+import {mkdir,copyFile,readFile} from 'node:fs/promises';
+import {resolve,dirname} from 'node:path';
+import {fileURLToPath} from 'node:url';
+const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
+const source=resolve(process.argv[2]||resolve(root,'../outputs/rivaz-bridge'));
+const dest=resolve(root,'storage/demo');
+const files=['rivaz-3d-model.glb','rivaz-map.tif','rivaz-point-cloud.laz','processing-report.pdf','bridge-closeup.png','bridge-source.jpg','map-preview.png','processing-summary.json'];
+const summary=JSON.parse(await readFile(resolve(source,'processing-summary.json'),'utf8'));
+if(!summary.images||!summary.statistics)throw Error('Source is not the expected Rivaz output bundle.');
+await mkdir(dest,{recursive:true});
+for(const file of files)await copyFile(resolve(source,file),resolve(dest,file));
+console.log(`Imported ${files.length} Rivaz artifacts into ${dest}. Source attribution: Pix4D.`);
